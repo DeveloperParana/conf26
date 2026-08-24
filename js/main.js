@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.querySelectorAll('[data-link="cfp"]').forEach((link) => {
     link.href = CONFIG.cfpUrl;
+    link.target = '_blank';
+    link.rel = 'noopener';
   });
   document.querySelectorAll('[data-link="contact-email"]').forEach((link) => {
     link.href = CONFIG.contactEmail ? `mailto:${CONFIG.contactEmail}` : '#';
