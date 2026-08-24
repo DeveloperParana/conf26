@@ -1,0 +1,102 @@
+/* Hero (#top) */
+.hero {
+  background: var(--color-black);
+  background-image: radial-gradient(var(--pattern-dot) 1px, transparent 1px);
+  background-size: 26px 26px;
+  padding: clamp(52px, 7.5vw, 120px) var(--section-padding-x) 0;
+  overflow: hidden;
+}
+
+.hero__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--tint-badge-border);
+  background: var(--tint-green-12);
+  color: var(--color-green-bright);
+  font-family: var(--font-mono);
+  font-size: clamp(11px, 1.05vw, 13px);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.hero__heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(18px, 3vw, 60px);
+  margin: clamp(18px, 2.4vw, 32px) 0 0;
+}
+
+.hero__title {
+  font-weight: 700;
+  font-size: clamp(42px, 9vw, 124px);
+  line-height: .92;
+  letter-spacing: -.035em;
+  color: var(--color-off-white);
+}
+
+.hero__logo {
+  width: clamp(104px, 14vw, 232px);
+  flex: none;
+}
+
+.hero__date {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(19px, 2.4vw, 34px);
+  line-height: 1.25;
+  color: var(--color-off-white);
+  margin: clamp(16px, 2vw, 28px) 0 0;
+  max-width: 22ch;
+}
+
+.hero__date span {
+  color: var(--on-dark-60);
+}
+
+.hero__location-address {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--on-dark-60);
+  max-width: 46ch;
+  margin: 12px 0 0;
+}
+
+.hero__subtitle {
+  font-size: clamp(15px, 1.35vw, 18px);
+  line-height: 1.6;
+  color: var(--on-dark-66);
+  margin: 18px 0 0;
+  max-width: 52ch;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: clamp(26px, 3vw, 40px) 0 0;
+}
+
+.hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: clamp(24px, 2.6vw, 36px) 0 0;
+}
+
+.hero__chip {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--on-dark-72);
+  border: 1px solid var(--on-dark-16);
+  border-radius: var(--radius-badge);
+  padding: 7px 12px;
+}

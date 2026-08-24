@@ -1,0 +1,12 @@
+[
+  { "tier": "ouro", "nome": "Nimbus Cloud", "logo": "https://placehold.co/300x150/FAF8F9/08090A?text=Nimbus+Cloud&font=roboto", "url": "#" },
+  { "tier": "ouro", "nome": "Araucária Systems", "logo": "https://placehold.co/300x150/FAF8F9/08090A?text=Araucaria+Systems&font=roboto", "url": "#" },
+  { "tier": "ouro", "nome": "Bytemar", "logo": "https://placehold.co/300x150/FAF8F9/08090A?text=Bytemar&font=roboto", "url": "#" },
+  { "tier": "ouro", "nome": "Guaíra Tech", "logo": "https://placehold.co/300x150/FAF8F9/08090A?text=Guaira+Tech&font=roboto", "url": "#" },
+  { "tier": "prata", "nome": "Havana Digital", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Havana+Digital&font=roboto", "url": "#" },
+  { "tier": "prata", "nome": "Rota Norte", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Rota+Norte&font=roboto", "url": "#" },
+  { "tier": "prata", "nome": "Cerrado Ventures", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Cerrado+Ventures&font=roboto", "url": "#" },
+  { "tier": "prata", "nome": "Litoral Cloud", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Litoral+Cloud&font=roboto", "url": "#" },
+  { "tier": "prata", "nome": "Andarilho Software", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Andarilho+Software&font=roboto", "url": "#" },
+  { "tier": "prata", "nome": "Kaingang Labs", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Kaingang+Labs&font=roboto", "url": "#" }
+]

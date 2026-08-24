@@ -1,0 +1,38 @@
+/* Padrões repetidos entre seções de conteúdo */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--color-green-forest);
+}
+
+.section-heading {
+  font-weight: 700;
+  font-size: clamp(30px, 4.4vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -.03em;
+  color: var(--color-black);
+  margin: 14px 0 0;
+}
+
+.section-lead {
+  font-size: clamp(15px, 1.35vw, 18px);
+  line-height: 1.65;
+  color: var(--color-text-body);
+  margin: 18px 0 0;
+  max-width: 60ch;
+}
+
+/* Variantes para seções de fundo escuro (preto) */
+.eyebrow--on-dark {
+  color: var(--color-green-bright);
+}
+
+.section-heading--on-dark {
+  color: var(--color-off-white);
+}
+
+.section-lead--on-dark {
+  color: var(--on-dark-66);
+}

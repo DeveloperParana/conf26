@@ -1,0 +1,62 @@
+/* Programação (#programacao) */
+.programacao {
+  background: var(--color-off-white);
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.programacao__inner {
+  max-width: var(--content-max-width-narrow);
+  margin: 0 auto;
+}
+
+.programacao__lead {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 14px 0 0;
+  max-width: 52ch;
+}
+
+.programacao__list {
+  margin: clamp(30px, 3.4vw, 48px) 0 0;
+  border-top: 1px solid var(--on-light-12);
+}
+
+.programacao__row {
+  display: grid;
+  grid-template-columns: minmax(62px, 110px) 1fr;
+  gap: clamp(12px, 2vw, 32px);
+  padding: clamp(16px, 1.8vw, 24px) var(--card-gap);
+  border-bottom: 1px solid var(--on-light-12);
+}
+
+.programacao__time {
+  font-family: var(--font-mono);
+  font-size: clamp(13px, 1.2vw, 15px);
+  color: var(--color-green-forest);
+}
+
+.programacao__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(16px, 1.6vw, 20px);
+  color: var(--color-black);
+}
+
+.programacao__desc {
+  font-size: 14px;
+  color: var(--color-text-faint);
+  margin-top: 4px;
+}
+
+/* Linha do almoço — destacada, incluída no ingresso.
+   Todas as linhas já têm padding horizontal (acima), então o fundo
+   verde ganha respiro do texto sem sair da largura das outras linhas. */
+.programacao__row--lunch {
+  background: var(--tint-green-08);
+  border-radius: var(--radius-control);
+}
+
+.programacao__row--lunch .programacao__desc {
+  color: var(--color-text-body);
+}

@@ -1,0 +1,197 @@
+/* Header sticky */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(8, 9, 10, .94);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--on-dark-12);
+}
+
+.header__bar {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--header-padding);
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 32px);
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+}
+
+.header__logo {
+  width: clamp(28px, 2.6vw, 34px);
+  height: auto;
+}
+
+.header__wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(14px, 1.35vw, 17px);
+  letter-spacing: -.01em;
+  color: var(--color-off-white);
+  white-space: nowrap;
+}
+
+.header__wordmark span {
+  color: var(--color-green-bright);
+}
+
+/* Navegação e CTA de telas grandes */
+.header__nav {
+  flex: 1;
+  display: flex;
+  gap: clamp(10px, 1.5vw, 22px);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 2px 0;
+}
+
+.header__nav a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--on-dark-70);
+  white-space: nowrap;
+}
+
+.header__nav a:hover {
+  color: var(--color-green-bright);
+}
+
+.header__cta {
+  flex: none;
+  background: var(--color-green);
+  color: var(--color-black);
+  font-weight: 600;
+  font-size: clamp(13px, 1.2vw, 15px);
+  padding: 10px clamp(12px, 1.5vw, 20px);
+  border-radius: var(--radius-control-header);
+  white-space: nowrap;
+  transition: background var(--transition-default);
+}
+
+.header__cta:hover {
+  background: var(--color-green-bright);
+  color: var(--color-black);
+}
+
+/* Ações de tela pequena: botão de ingresso compacto + hambúrguer */
+.header__mobile-actions {
+  display: none;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.header__cta--compact {
+  background: var(--color-green);
+  color: var(--color-black);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 11px 16px;
+  border-radius: var(--radius-control-header);
+  white-space: nowrap;
+  transition: background var(--transition-default);
+}
+
+.header__cta--compact:hover {
+  background: var(--color-green-bright);
+  color: var(--color-black);
+}
+
+.header__menu-toggle {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border: 1px solid var(--on-dark-22);
+  background: transparent;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header__menu-toggle span {
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-off-white);
+  display: block;
+}
+
+/* Painel do menu mobile */
+.header__mobile-nav {
+  border-top: 1px solid var(--on-dark-12);
+  padding: 8px 16px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__mobile-nav[hidden] {
+  display: none;
+}
+
+.header__mobile-link {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-off-white);
+  padding: 13px 4px;
+  border-bottom: 1px solid var(--on-dark-08);
+}
+
+.header__mobile-link:hover {
+  color: var(--color-green-bright);
+}
+
+.header__mobile-link--last {
+  border-bottom: none;
+}
+
+.header__mobile-cfp {
+  margin-top: 14px;
+  text-align: center;
+  border: 1px solid var(--on-dark-24);
+  color: var(--color-off-white);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 20px;
+  border-radius: var(--radius-control);
+}
+
+.header__mobile-cfp:hover {
+  color: var(--color-green-bright);
+  border-color: var(--color-green-bright);
+}
+
+/* Breakpoint da navegação: 900px, medido no conteúdo real (logo + 7 links +
+   botão) — abaixo disso o menu desktop começa a cortar itens silenciosamente
+   (overflow-x:auto sem barra visível), então trocamos pro mobile antes disso. */
+@media (max-width: 899px) {
+  .header__nav,
+  .header__cta {
+    display: none;
+  }
+
+  .header__mobile-actions {
+    display: flex;
+  }
+}
+
+@media (min-width: 900px) {
+  .header__mobile-actions,
+  .header__mobile-nav {
+    display: none;
+  }
+}

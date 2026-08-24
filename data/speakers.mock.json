@@ -1,0 +1,10 @@
+[
+  { "nome": "Ana Ribeiro", "cargo": "Staff Engineer", "empresa": "Órbita", "linkedin": "https://www.linkedin.com/", "foto": "https://i.pravatar.cc/300?img=47" },
+  { "nome": "Bruno Yamaguchi", "cargo": "Head de Plataforma", "empresa": "Tucano Labs", "linkedin": "https://www.linkedin.com/", "foto": "https://i.pravatar.cc/300?img=13" },
+  { "nome": "Carla Mendes", "cargo": "Engenheira de Dados", "empresa": "Pinhão Tech", "linkedin": "https://www.linkedin.com/", "foto": "https://i.pravatar.cc/300?img=32" },
+  { "nome": "Diego Salvador", "cargo": "Tech Lead Mobile", "empresa": "Maré Software", "linkedin": "https://www.linkedin.com/", "foto": "https://i.pravatar.cc/300?img=52" },
+  { "nome": "Elisa Kawano", "cargo": "SRE", "empresa": "Zapt", "linkedin": "https://www.linkedin.com/", "foto": "https://i.pravatar.cc/300?img=44" },
+  { "nome": "Felipe Moraes", "cargo": "Arquiteto de Soluções", "empresa": "Vento Sul", "linkedin": "https://www.linkedin.com/", "foto": "https://i.pravatar.cc/300?img=14" },
+  { "nome": "Gabriela Rocha", "cargo": "Product Engineer", "empresa": "Codorna", "linkedin": "https://www.linkedin.com/", "foto": "https://i.pravatar.cc/300?img=45" },
+  { "nome": "Henrique Alves", "cargo": "Especialista em IA", "empresa": "Curitiba Data", "linkedin": "https://www.linkedin.com/", "foto": "https://i.pravatar.cc/300?img=51" }
+]

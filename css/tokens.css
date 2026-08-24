@@ -1,0 +1,103 @@
+/* Design tokens — DevPR Conf 26
+   Fonte: design_handoff_devpr_conf_26/README.md */
+:root {
+  /* Cores */
+  --color-green: #15A04B;
+  --color-green-bright: #35D46E;
+  --color-green-forest: #0A5C2C;
+  --color-black: #08090A;
+  --color-off-white: #FAF8F9;
+  --color-white: #FFFFFF;
+
+  --color-text-body: #4B4F4C;
+  --color-text-muted: #5B5F5C;
+  --color-text-faint: #6A6E6B;
+  --color-text-faint-2: #7A7E7B;
+  --color-text-disabled: #9A9E9B;
+  --color-text-quiet: #8A8E8B;
+  --color-bullet-disabled: #C7CAC8;
+
+  /* Preto (#08090A) sobre fundo claro, por opacidade exata do protótipo. */
+  --on-light-05: rgba(8, 9, 10, .05);
+  --on-light-09: rgba(8, 9, 10, .09);
+  --on-light-12: rgba(8, 9, 10, .12);
+  --on-light-14: rgba(8, 9, 10, .14);
+  --on-light-10: rgba(8, 9, 10, .1);
+  --on-light-16: rgba(8, 9, 10, .16);
+  --on-light-18: rgba(8, 9, 10, .18);
+  --on-light-20: rgba(8, 9, 10, .2);
+  --on-light-22: rgba(8, 9, 10, .22);
+  --on-light-24: rgba(8, 9, 10, .24);
+  --on-light-60: rgba(8, 9, 10, .6);
+  --on-light-72: rgba(8, 9, 10, .72);
+
+  /* Off-white (#FAF8F9) sobre fundo escuro, por opacidade exata do protótipo.
+     Usada tanto para texto quanto para bordas — o valor é o que importa. */
+  --on-dark-03: rgba(250, 248, 249, .03);
+  --on-dark-04: rgba(250, 248, 249, .04);
+  --on-dark-05: rgba(250, 248, 249, .05);
+  --on-dark-06: rgba(250, 248, 249, .06);
+  --on-dark-07: rgba(250, 248, 249, .07);
+  --on-dark-08: rgba(250, 248, 249, .08);
+  --on-dark-09: rgba(250, 248, 249, .09);
+  --on-dark-12: rgba(250, 248, 249, .12);
+  --on-dark-14: rgba(250, 248, 249, .14);
+  --on-dark-16: rgba(250, 248, 249, .16);
+  --on-dark-20: rgba(250, 248, 249, .2);
+  --on-dark-22: rgba(250, 248, 249, .22);
+  --on-dark-24: rgba(250, 248, 249, .24);
+  --on-dark-28: rgba(250, 248, 249, .28);
+  --on-dark-40: rgba(250, 248, 249, .4);
+  --on-dark-45: rgba(250, 248, 249, .45);
+  --on-dark-55: rgba(250, 248, 249, .55);
+  --on-dark-60: rgba(250, 248, 249, .6);
+  --on-dark-66: rgba(250, 248, 249, .66);
+  --on-dark-70: rgba(250, 248, 249, .7);
+  --on-dark-72: rgba(250, 248, 249, .72);
+  --on-dark-75: rgba(250, 248, 249, .75);
+  --on-dark-78: rgba(250, 248, 249, .78);
+  --on-dark-80: rgba(250, 248, 249, .8);
+  --on-dark-86: rgba(250, 248, 249, .86);
+
+  /* Verde translúcido (rgba(21,160,75,X)) — realces sobre fundo claro ou escuro */
+  --tint-green-08: rgba(21, 160, 75, .08);
+  --tint-green-10: rgba(21, 160, 75, .1);
+  --tint-green-12: rgba(21, 160, 75, .12);
+
+  /* Borda de badges/callouts (verde-claro a 40%) */
+  --tint-badge-border: rgba(53, 212, 110, .4);
+
+  /* Motivo de grade de pontos (hero, palestrantes, footer) */
+  --pattern-dot: rgba(250, 248, 249, .1);
+
+  /* Tipografia */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Espaçamento */
+  --section-padding-y: clamp(60px, 7vw, 120px);
+  --section-padding-x: clamp(20px, 4.5vw, 72px);
+  --content-max-width: 1240px;
+  --content-max-width-narrow: 960px;
+  --content-max-width-faq: 860px;
+  --card-gap: clamp(12px, 1.4vw, 20px);
+  --column-gap: clamp(20px, 2.6vw, 44px);
+  --card-padding: clamp(20px, 2.2vw, 32px);
+  --header-padding: 12px clamp(16px, 3.4vw, 48px);
+
+  /* Raio */
+  --radius-control: 10px;
+  --radius-control-header: 8px;
+  --radius-card: 14px;
+  --radius-card-lg: 16px;
+  --radius-container: 20px;
+  --radius-badge: 7px;
+  --radius-pill: 999px;
+
+  /* Transições */
+  --transition-default: .18s ease;
+
+  /* Breakpoint principal (referência para media queries) */
+  --breakpoint-mobile: 900px;
+}

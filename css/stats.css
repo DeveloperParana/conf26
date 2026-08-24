@@ -1,0 +1,31 @@
+/* Stats (logo abaixo do hero, ainda sobre fundo preto) */
+.stats {
+  background: var(--color-black);
+  padding: clamp(40px, 5vw, 72px) var(--section-padding-x) clamp(52px, 6vw, 96px);
+}
+
+.stats__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  border-top: 1px solid var(--on-dark-14);
+  padding-top: clamp(28px, 3.4vw, 48px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(20px, 2.6vw, 40px);
+}
+
+.stats__value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(34px, 4.4vw, 60px);
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: var(--color-green-bright);
+}
+
+.stats__label {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--on-dark-60);
+  margin-top: 8px;
+}

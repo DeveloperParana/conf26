@@ -1,0 +1,61 @@
+/* Call for Papers (#cfp) — única seção com fundo verde */
+.cfp {
+  background: var(--color-green);
+  padding: clamp(52px, 6vw, 96px) var(--section-padding-x);
+}
+
+.cfp__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.cfp__eyebrow {
+  color: var(--on-light-60);
+}
+
+.cfp__heading {
+  font-size: clamp(28px, 3.8vw, 52px);
+  max-width: 20ch;
+  margin-top: 12px;
+}
+
+.cfp__lead {
+  line-height: 1.6;
+  max-width: 50ch;
+  color: var(--on-light-72);
+  margin-top: 14px;
+}
+
+.cfp__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin: clamp(24px, 2.8vw, 36px) 0 0;
+}
+
+.cfp__button {
+  background: var(--color-black);
+  color: var(--color-off-white);
+  font-weight: 600;
+  font-size: clamp(15px, 1.4vw, 17px);
+  padding: 16px 28px;
+  border-radius: var(--radius-control);
+  transition: background var(--transition-default);
+}
+
+.cfp__button:hover {
+  background: var(--color-green-forest);
+}
+
+.cfp__note {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--on-light-60);
+}
+
+.cfp__disclaimer {
+  font-size: 13px;
+  color: var(--on-light-60);
+  margin: 18px 0 0;
+}

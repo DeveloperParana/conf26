@@ -1,0 +1,264 @@
+/* Ingressos (#ingressos) */
+.ingressos {
+  background: var(--color-off-white);
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.ingressos__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.ingressos__lead {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 14px 0 0;
+  max-width: 54ch;
+}
+
+/* Bloco escuro da meia-entrada solidária */
+.ingressos__half {
+  margin: clamp(26px, 3vw, 40px) 0 0;
+  background: var(--color-black);
+  border-radius: var(--radius-card-lg);
+  padding: var(--card-padding);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(16px, 2vw, 32px);
+  align-items: center;
+}
+
+.ingressos__half-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--color-green-bright);
+}
+
+.ingressos__half-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(19px, 2vw, 26px);
+  line-height: 1.2;
+  color: var(--color-off-white);
+  margin-top: 10px;
+  max-width: 26ch;
+}
+
+.ingressos__half-ways {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ingressos__half-way {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.ingressos__half-way-number {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-green-bright);
+  margin-top: 3px;
+}
+
+.ingressos__half-way-text {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--on-dark-80);
+}
+
+.ingressos__half-way-text strong {
+  color: var(--color-off-white);
+  font-weight: 600;
+}
+
+/* Cards de lote */
+.ingressos__tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(14px, 1.6vw, 22px);
+  margin: clamp(20px, 2.2vw, 28px) 0 0;
+}
+
+.ingressos__tier {
+  background: var(--color-white);
+  border: 1px solid var(--on-light-10);
+  border-radius: var(--radius-card-lg);
+  padding: clamp(22px, 2.4vw, 32px);
+  display: flex;
+  flex-direction: column;
+}
+
+.ingressos__tier-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.ingressos__tier-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.ingressos__tier-badge {
+  background: var(--color-green);
+  color: var(--color-black);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: var(--radius-badge);
+  letter-spacing: .04em;
+}
+
+.ingressos__tier-kind {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--color-green-forest);
+  margin-top: 18px;
+}
+
+.ingressos__tier-price {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(38px, 4.2vw, 56px);
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: var(--color-black);
+  margin-top: 6px;
+}
+
+.ingressos__tier-note {
+  font-size: 13.5px;
+  color: var(--color-text-quiet);
+  margin-top: 10px;
+}
+
+.ingressos__tier-full {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--on-light-10);
+}
+
+.ingressos__tier-full strong {
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.ingressos__tier-list {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ingressos__tier-list li {
+  font-size: 14.5px;
+  color: var(--color-text-body);
+  display: flex;
+  gap: 10px;
+}
+
+.ingressos__tier-list li::before {
+  content: '';
+  flex: none;
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background: var(--color-green);
+  margin-top: 7px;
+}
+
+.ingressos__tier-list li[data-excluded] {
+  color: var(--color-text-disabled);
+}
+
+.ingressos__tier-list li[data-excluded]::before {
+  background: var(--color-bullet-disabled);
+}
+
+.ingressos__tier-cta {
+  margin-top: 26px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15px 20px;
+  border-radius: var(--radius-control);
+}
+
+a.ingressos__tier-cta {
+  background: var(--color-green);
+  color: var(--color-black);
+  transition: background var(--transition-default);
+}
+
+a.ingressos__tier-cta:hover {
+  background: var(--color-green-bright);
+  color: var(--color-black);
+}
+
+.ingressos__tier-cta--disabled {
+  border: 1px solid var(--on-light-14);
+  color: var(--color-text-faint);
+}
+
+/* Lote ativo: card escuro em destaque */
+.ingressos__tier--active {
+  background: var(--color-black);
+  border: 2px solid var(--color-green);
+}
+
+.ingressos__tier--active .ingressos__tier-label {
+  color: var(--on-dark-60);
+}
+
+.ingressos__tier--active .ingressos__tier-kind {
+  color: var(--color-green-bright);
+}
+
+.ingressos__tier--active .ingressos__tier-price {
+  color: var(--color-off-white);
+}
+
+.ingressos__tier--active .ingressos__tier-note {
+  color: var(--on-dark-55);
+}
+
+.ingressos__tier--active .ingressos__tier-full {
+  color: var(--on-dark-72);
+  border-top-color: var(--on-dark-14);
+}
+
+.ingressos__tier--active .ingressos__tier-full strong {
+  color: var(--color-off-white);
+}
+
+.ingressos__tier--active .ingressos__tier-list li {
+  color: var(--on-dark-78);
+}
+
+.ingressos__tier--active .ingressos__tier-list li::before {
+  background: var(--color-green-bright);
+}
+
+.ingressos__note {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--color-text-faint-2);
+  margin: 22px 0 0;
+}
