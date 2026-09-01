@@ -191,6 +191,15 @@
   background: var(--color-bullet-disabled);
 }
 
+.ingressos__tier-list li[data-highlight] {
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.ingressos__tier-list li[data-highlight]::before {
+  background: var(--color-green);
+}
+
 .ingressos__tier-cta {
   margin-top: 26px;
   text-align: center;
@@ -253,6 +262,10 @@ a.ingressos__tier-cta:hover {
 
 .ingressos__tier--active .ingressos__tier-list li::before {
   background: var(--color-green-bright);
+}
+
+.ingressos__tier--active .ingressos__tier-list li[data-highlight] {
+  color: var(--color-off-white);
 }
 
 .ingressos__note {
