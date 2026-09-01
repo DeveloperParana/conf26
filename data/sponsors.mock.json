@@ -3,10 +3,19 @@
   { "tier": "ouro", "nome": "Araucária Systems", "logo": "https://placehold.co/300x150/FAF8F9/08090A?text=Araucaria+Systems&font=roboto", "url": "#" },
   { "tier": "ouro", "nome": "Bytemar", "logo": "https://placehold.co/300x150/FAF8F9/08090A?text=Bytemar&font=roboto", "url": "#" },
   { "tier": "ouro", "nome": "Guaíra Tech", "logo": "https://placehold.co/300x150/FAF8F9/08090A?text=Guaira+Tech&font=roboto", "url": "#" },
+  { "tier": "ouro", "nome": "Marumbi Sistemas", "logo": "https://placehold.co/300x150/FAF8F9/08090A?text=Marumbi+Sistemas&font=roboto", "url": "#" },
   { "tier": "prata", "nome": "Havana Digital", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Havana+Digital&font=roboto", "url": "#" },
   { "tier": "prata", "nome": "Rota Norte", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Rota+Norte&font=roboto", "url": "#" },
   { "tier": "prata", "nome": "Cerrado Ventures", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Cerrado+Ventures&font=roboto", "url": "#" },
   { "tier": "prata", "nome": "Litoral Cloud", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Litoral+Cloud&font=roboto", "url": "#" },
   { "tier": "prata", "nome": "Andarilho Software", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Andarilho+Software&font=roboto", "url": "#" },
-  { "tier": "prata", "nome": "Kaingang Labs", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Kaingang+Labs&font=roboto", "url": "#" }
+  { "tier": "prata", "nome": "Kaingang Labs", "logo": "https://placehold.co/300x170/FAF8F9/08090A?text=Kaingang+Labs&font=roboto", "url": "#" },
+  { "tier": "bronze", "nome": "Pinhão Dev", "logo": "https://placehold.co/240x130/FAF8F9/08090A?text=Pinhao+Dev&font=roboto", "url": "#" },
+  { "tier": "bronze", "nome": "Estrada Real Tech", "logo": "https://placehold.co/240x130/FAF8F9/08090A?text=Estrada+Real&font=roboto", "url": "#" },
+  { "tier": "bronze", "nome": "Vale do Ivaí", "logo": "https://placehold.co/240x130/FAF8F9/08090A?text=Vale+do+Ivai&font=roboto", "url": "#" },
+  { "tier": "bronze", "nome": "Codelab PR", "logo": "https://placehold.co/240x130/FAF8F9/08090A?text=Codelab+PR&font=roboto", "url": "#" },
+  { "tier": "bronze", "nome": "Sul Bytes", "logo": "https://placehold.co/240x130/FAF8F9/08090A?text=Sul+Bytes&font=roboto", "url": "#" },
+  { "tier": "bronze", "nome": "Nascente Labs", "logo": "https://placehold.co/240x130/FAF8F9/08090A?text=Nascente+Labs&font=roboto", "url": "#" },
+  { "tier": "bronze", "nome": "Costa Oeste", "logo": "https://placehold.co/240x130/FAF8F9/08090A?text=Costa+Oeste&font=roboto", "url": "#" },
+  { "tier": "bronze", "nome": "Cambará Cloud", "logo": "https://placehold.co/240x130/FAF8F9/08090A?text=Cambara+Cloud&font=roboto", "url": "#" }
 ]

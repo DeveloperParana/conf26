@@ -3,7 +3,7 @@
   background: var(--color-black);
   background-image: radial-gradient(var(--pattern-dot) 1px, transparent 1px);
   background-size: 26px 26px;
-  padding: clamp(52px, 7.5vw, 120px) var(--section-padding-x) 0;
+  padding: clamp(26px, 3.75vw, 60px) var(--section-padding-x) 0;
   overflow: hidden;
 }
 

@@ -78,7 +78,6 @@
   line-height: 1.6;
   color: var(--on-dark-86);
   margin: 8px 0 0;
-  max-width: 46ch;
 }
 
 .local__callout-text strong {

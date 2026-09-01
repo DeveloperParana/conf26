@@ -149,6 +149,7 @@ async function initPatrocinio() {
     const tiers = [
       { key: 'ouro', label: 'Ouro' },
       { key: 'prata', label: 'Prata' },
+      { key: 'bronze', label: 'Bronze / Apoio e comunidades' },
     ];
 
     groupsContainer.innerHTML = tiers.map((tier) => {

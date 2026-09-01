@@ -49,3 +49,11 @@
   color: var(--color-text-muted);
   margin: 0;
 }
+
+.sobre__card-note {
+  font-style: italic;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 6px 0 0;
+}
