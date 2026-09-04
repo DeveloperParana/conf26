@@ -99,6 +99,10 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  /* Reserva a altura do badge "À VENDA" nos 3 cards, mesmo nos que não têm
+     badge — senão o cabeçalho do lote ativo fica mais alto que os outros e
+     empurra o resto do conteúdo (preço, lista, botão) pra baixo. */
+  min-height: 22px;
 }
 
 .ingressos__tier-label {
