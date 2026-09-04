@@ -20,13 +20,6 @@
   max-width: 52ch;
 }
 
-.palestrantes__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 26px 0 0;
-}
-
 /* Estado "em breve": cards fantasma */
 .palestrantes__ghost-grid {
   display: grid;

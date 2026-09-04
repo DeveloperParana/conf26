@@ -51,6 +51,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Hero: destaques ("1 palco" / "7 palestras" / "conexões reais") alternam
+// a cada 2s, em loop. Respeita quem prefere menos animação na tela.
+document.addEventListener('DOMContentLoaded', () => {
+  const lines = document.querySelectorAll('.hero__highlight-line');
+  if (!lines.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let current = [...lines].findIndex((line) => line.classList.contains('hero__highlight-line--active'));
+  if (current === -1) current = 0;
+
+  setInterval(() => {
+    lines[current].classList.remove('hero__highlight-line--active');
+    current = (current + 1) % lines.length;
+    lines[current].classList.add('hero__highlight-line--active');
+  }, 2000);
+});
+
 // Seção Programação: linhas carregadas de data/schedule.json
 async function initProgramacao() {
   const list = document.querySelector('.programacao__list');

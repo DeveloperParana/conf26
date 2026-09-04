@@ -1,0 +1,7 @@
+.DS_Store
+
+# Docs de trabalho/rascunho (revisões, briefings) — não fazem parte do site.
+# README e TODO continuam versionados normalmente.
+*.md
+!README.md
+!TODO.md

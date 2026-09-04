@@ -48,7 +48,7 @@
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--color-green-bright);
-  min-width: 74px;
+  min-width: 108px;
 }
 
 .local__fact-value {

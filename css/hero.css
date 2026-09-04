@@ -7,12 +7,41 @@
   overflow: hidden;
 }
 
+/* Mobile: uma coluna só, destaques entre o subtítulo e os botões.
+   Desktop (900px+): duas colunas, destaques viram uma coluna à direita
+   alinhada com o logo — ver breakpoint embaixo. */
 .hero__inner {
   max-width: var(--content-max-width);
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "badge"
+    "lockup"
+    "date"
+    "subtitle"
+    "highlights"
+    "actions"
+    "chips";
+}
+
+@media (min-width: 900px) {
+  .hero__inner {
+    grid-template-columns: 1fr auto;
+    column-gap: clamp(24px, 4vw, 64px);
+    grid-template-areas:
+      "badge     highlights"
+      "lockup    highlights"
+      "date      highlights"
+      "subtitle  highlights"
+      "actions   highlights"
+      "chips     highlights";
+  }
 }
 
 .hero__badge {
+  grid-area: badge;
+  justify-self: start;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -27,28 +56,19 @@
   border-radius: var(--radius-pill);
 }
 
-.hero__heading-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: clamp(18px, 3vw, 60px);
+.hero__lockup {
+  grid-area: lockup;
   margin: clamp(18px, 2.4vw, 32px) 0 0;
+  line-height: 0;
 }
 
-.hero__title {
-  font-weight: 700;
-  font-size: clamp(42px, 9vw, 124px);
-  line-height: .92;
-  letter-spacing: -.035em;
-  color: var(--color-off-white);
-}
-
-.hero__logo {
-  width: clamp(104px, 14vw, 232px);
-  flex: none;
+.hero__lockup img {
+  width: clamp(240px, 32vw, 560px);
+  height: auto;
 }
 
 .hero__date {
+  grid-area: date;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(19px, 2.4vw, 34px);
@@ -62,15 +82,8 @@
   color: var(--on-dark-60);
 }
 
-.hero__location-address {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--on-dark-60);
-  max-width: 46ch;
-  margin: 12px 0 0;
-}
-
 .hero__subtitle {
+  grid-area: subtitle;
   font-size: clamp(15px, 1.35vw, 18px);
   line-height: 1.6;
   color: var(--on-dark-66);
@@ -78,7 +91,16 @@
   max-width: 52ch;
 }
 
+.hero__highlight-mark {
+  background: var(--color-green-bright);
+  color: var(--color-off-white);
+  padding: 0 6px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
 .hero__actions {
+  grid-area: actions;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -86,6 +108,7 @@
 }
 
 .hero__chips {
+  grid-area: chips;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -99,4 +122,69 @@
   border: 1px solid var(--on-dark-16);
   border-radius: var(--radius-badge);
   padding: 7px 12px;
+}
+
+/* Bloco de destaques: no mobile é só mais um item empilhado (gap pequeno,
+   igual aos outros); no desktop vira coluna ao lado do logo (gap grande
+   pra centralizar com ele). O ajuste do desktop precisa vir DEPOIS dessa
+   regra base no arquivo — mesma especificidade, e quem vem por último no
+   CSS ganha, media query ou não (já caímos nessa antes). */
+.hero__highlights {
+  grid-area: highlights;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: clamp(18px, 2.4vw, 32px);
+}
+
+@media (min-width: 900px) {
+  .hero__highlights {
+    margin-top: clamp(90px, calc(5.5vw + 65px), 200px);
+  }
+}
+
+.hero__highlight-line {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  color: var(--color-off-white);
+}
+
+.hero__highlight-arrow {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-off-white);
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.hero__highlight-line--active .hero__highlight-arrow {
+  opacity: 1;
+}
+
+.hero__highlight-text {
+  padding: 0 8px;
+  border-radius: 3px;
+  background: transparent;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+.hero__highlight-line--active .hero__highlight-text {
+  background: var(--color-green-bright);
+  color: var(--color-off-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__highlight-arrow,
+  .hero__highlight-text {
+    transition: none;
+  }
 }
