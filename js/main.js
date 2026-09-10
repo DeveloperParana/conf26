@@ -91,54 +91,33 @@ async function initProgramacao() {
   }
 }
 
-// Seção Palestrantes: estado "em breve" ou grid populado, conforme data/speakers.json.
-// Sem palestrante nenhum, os 4 cards fantasma também somem — só ficam heading/CTAs.
+// Seção Palestrantes: o banner "Em breve!" (heading + texto) fica sempre no ar.
+// Os cards abaixo saem de data/speakers.json — sem nenhum confirmado, não renderiza nada.
 async function initPalestrantes() {
-  const soonState = document.querySelector('.palestrantes__state[data-state="em-breve"]');
-  const filledState = document.querySelector('.palestrantes__state[data-state="populado"]');
   const cardsContainer = document.querySelector('.palestrantes__cards');
-  const listContainer = document.querySelector('.palestrantes__list');
-  const ghostGrid = document.querySelector('.palestrantes__ghost-grid');
-  if (!soonState || !filledState || !cardsContainer) return;
+  if (!cardsContainer) return;
 
   try {
     const response = await fetch(dataUrl('speakers'));
     const speakers = await response.json();
+    if (speakers.length === 0) return;
 
-    if (speakers.length === 0) {
-      if (ghostGrid) ghostGrid.hidden = true;
-      return;
-    }
+    const socialLink = (label, url) => url
+      ? `<a href="${url}" target="_blank" rel="noopener" class="palestrantes__card-link">${label} ↗</a>`
+      : '';
 
     cardsContainer.innerHTML = speakers.map((speaker) => `
-      <a href="${speaker.linkedin}" target="_blank" rel="noopener" class="palestrantes__card">
+      <div class="palestrantes__card">
         <div class="palestrantes__card-photo">${speaker.foto ? `<img src="${speaker.foto}" alt="">` : '<span>foto</span>'}</div>
         <div class="palestrantes__card-name">${speaker.nome}</div>
         <div class="palestrantes__card-role">${speaker.cargo}</div>
-        <div class="palestrantes__card-company">${speaker.empresa}</div>
-        <div class="palestrantes__card-linkedin">LinkedIn ↗</div>
-      </a>
+        ${speaker.empresa ? `<div class="palestrantes__card-company">${speaker.empresa}</div>` : ''}
+        <div class="palestrantes__card-links">
+          ${socialLink('LinkedIn', speaker.linkedin)}
+          ${socialLink('Instagram', speaker.instagram)}
+        </div>
+      </div>
     `).join('');
-
-    // Mesmos dados, lista compacta pro celular (css/palestrantes.css troca qual aparece)
-    if (listContainer) {
-      listContainer.innerHTML = speakers.map((speaker) => `
-        <a href="${speaker.linkedin}" target="_blank" rel="noopener" class="palestrantes__list-row">
-          <div class="palestrantes__list-photo">${speaker.foto ? `<img src="${speaker.foto}" alt="">` : '<span>foto</span>'}</div>
-          <div class="palestrantes__list-info">
-            <div class="palestrantes__list-name">${speaker.nome}</div>
-            <div class="palestrantes__list-role">${speaker.cargo}</div>
-          </div>
-          <div class="palestrantes__list-meta">
-            <div class="palestrantes__list-company">${speaker.empresa}</div>
-            <div class="palestrantes__list-linkedin">LinkedIn ↗</div>
-          </div>
-        </a>
-      `).join('');
-    }
-
-    soonState.hidden = true;
-    filledState.hidden = false;
   } catch (error) {
     console.warn('Não foi possível carregar data/speakers.json — sirva o site por um servidor local (ex.: python3 -m http.server).', error);
   }

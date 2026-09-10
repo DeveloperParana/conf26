@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "nome": "Téo Calvo",
+    "cargo": "Estatístico e educador de dados",
+    "empresa": "Téo Me Why",
+    "linkedin": "https://www.linkedin.com/in/teocalvo/",
+    "instagram": "https://www.instagram.com/teomewhy/",
+    "foto": "assets/speakers/teo-calvo.jpg",
+    "bio": "Téo Calvo é estatístico, criador do canal Téo Me Why e referência em ensino de dados no Brasil. Já liderou áreas de dados na Globo e na Gamers Club, e hoje ensina Python, SQL, Estatística e Machine Learning para milhares de pessoas."
+  }
+]

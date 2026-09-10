@@ -235,42 +235,13 @@
     <div class="palestrantes__inner">
       <div class="eyebrow eyebrow--on-dark">Palestrantes</div>
 
-      <!-- Estado "em breve": mostrado quando data/speakers.json não tem palestrantes -->
-      <div class="palestrantes__state" data-state="em-breve">
-        <h2 class="section-heading section-heading--on-dark palestrantes__heading">Em breve!</h2>
-        <p class="section-lead section-lead--on-dark palestrantes__lead">A grade de palestras está sendo montada para entregar um dia inesquecível de aprendizado. Quer ver sua foto aqui também? O nosso C4P (Call for Papers) está aberto, envie sua proposta e venha palestrar com a gente!</p>
+      <!-- O banner "Em breve!" fica sempre; os cards abaixo saem de data/speakers.json.
+           Sem nenhum confirmado, ficam só o heading e o texto. -->
+      <h2 class="section-heading section-heading--on-dark palestrantes__heading">Em breve!</h2>
+      <p class="section-lead section-lead--on-dark palestrantes__lead">A grade de palestras está sendo montada para entregar um dia inesquecível de aprendizado. Quer ver sua foto aqui também? O nosso C4P (Call for Papers) está aberto, envie sua proposta e venha palestrar com a gente!</p>
 
-        <div class="palestrantes__ghost-grid">
-          <div class="palestrantes__ghost-card">
-            <div class="palestrantes__ghost-photo"><span>em breve</span></div>
-            <div class="palestrantes__ghost-bar" style="width:70%"></div>
-            <div class="palestrantes__ghost-bar--small" style="width:45%"></div>
-          </div>
-          <div class="palestrantes__ghost-card">
-            <div class="palestrantes__ghost-photo"><span>em breve</span></div>
-            <div class="palestrantes__ghost-bar" style="width:60%"></div>
-            <div class="palestrantes__ghost-bar--small" style="width:52%"></div>
-          </div>
-          <div class="palestrantes__ghost-card">
-            <div class="palestrantes__ghost-photo"><span>em breve</span></div>
-            <div class="palestrantes__ghost-bar" style="width:75%"></div>
-            <div class="palestrantes__ghost-bar--small" style="width:40%"></div>
-          </div>
-          <div class="palestrantes__ghost-card">
-            <div class="palestrantes__ghost-photo"><span>em breve</span></div>
-            <div class="palestrantes__ghost-bar" style="width:65%"></div>
-            <div class="palestrantes__ghost-bar--small" style="width:48%"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Estado populado: preenchido via JS (js/main.js) a partir de data/speakers.json -->
-      <div class="palestrantes__state" data-state="populado" hidden>
-        <h2 class="section-heading section-heading--on-dark palestrantes__heading">Quem sobe no palco</h2>
-        <p class="section-lead section-lead--on-dark palestrantes__lead">Primeiros nomes confirmados. Seguimos anunciando até outubro.</p>
-        <div class="palestrantes__cards"></div>
-        <div class="palestrantes__list"></div>
-      </div>
+      <!-- Primeiros nomes confirmados — preenchido via JS (js/main.js) a partir de data/speakers.json -->
+      <div class="palestrantes__cards"></div>
     </div>
   </section>
 
