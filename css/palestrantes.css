@@ -1,4 +1,4 @@
-/* Palestrantes (#palestrantes) — cards saem de data/speakers.json */
+/* Palestrantes (#palestrantes): cards saem de data/speakers.json */
 .palestrantes {
   background: var(--color-black);
   background-image: radial-gradient(var(--on-dark-08) 1px, transparent 1px);
@@ -29,7 +29,7 @@
   margin: clamp(32px, 4vw, 56px) 0 0;
 }
 
-/* Sem palestrante no JSON o container fica vazio — não reserva a margem à toa */
+/* Sem palestrante no JSON o container fica vazio, então não reserva a margem à toa */
 .palestrantes__cards:empty {
   display: none;
 }
@@ -55,9 +55,38 @@
   transform: translateY(-3px);
 }
 
+/* Placeholder: segura o lugar de um nome ainda não anunciado */
+.palestrantes__card--placeholder {
+  border-style: dashed;
+  border-color: var(--on-dark-16);
+  background: var(--on-dark-03);
+  /* Centraliza o pouco conteúdo (círculo + "Em breve!") no card, que estica
+     pra acompanhar a altura do card do Téo na mesma linha. */
+  justify-content: center;
+}
+
+.palestrantes__card--placeholder:hover {
+  border-color: var(--on-dark-16);
+  background: var(--on-dark-03);
+  transform: none;
+}
+
+.palestrantes__card--placeholder .palestrantes__card-photo {
+  opacity: .5;
+}
+
+.palestrantes__card--placeholder .palestrantes__card-name {
+  color: var(--on-dark-40);
+  font-weight: 500;
+}
+
 .palestrantes__card-photo {
+  /* width + height fixos (não só aspect-ratio): como flex item de um card que
+     pode esticar, o aspect-ratio sozinho deixava o círculo vazio do placeholder
+     crescer junto com o card. */
   width: clamp(92px, 9vw, 124px);
-  aspect-ratio: 1 / 1;
+  height: clamp(92px, 9vw, 124px);
+  flex: none;
   border-radius: 50%;
   background-color: var(--on-dark-06);
   background-image: repeating-linear-gradient(135deg, var(--on-dark-07) 0 10px, transparent 10px 20px);

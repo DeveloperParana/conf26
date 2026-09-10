@@ -87,12 +87,12 @@ async function initProgramacao() {
       </div>
     `).join('');
   } catch (error) {
-    console.warn('Não foi possível carregar data/schedule.json — sirva o site por um servidor local (ex.: python3 -m http.server).', error);
+    console.warn('Não foi possível carregar data/schedule.json. Sirva o site por um servidor local (ex.: python3 -m http.server).', error);
   }
 }
 
-// Seção Palestrantes: o banner "Em breve!" (heading + texto) fica sempre no ar.
-// Os cards abaixo saem de data/speakers.json — sem nenhum confirmado, não renderiza nada.
+// Seção Palestrantes: o heading e o texto de apoio ficam sempre no ar.
+// Os cards abaixo saem de data/speakers.json. Sem nenhum confirmado, não renderiza nada.
 async function initPalestrantes() {
   const cardsContainer = document.querySelector('.palestrantes__cards');
   if (!cardsContainer) return;
@@ -106,26 +106,36 @@ async function initPalestrantes() {
       ? `<a href="${url}" target="_blank" rel="noopener" class="palestrantes__card-link">${label} ↗</a>`
       : '';
 
-    cardsContainer.innerHTML = speakers.map((speaker) => `
-      <div class="palestrantes__card">
-        <div class="palestrantes__card-photo">${speaker.foto ? `<img src="${speaker.foto}" alt="">` : '<span>foto</span>'}</div>
-        <div class="palestrantes__card-name">${speaker.nome}</div>
-        <div class="palestrantes__card-role">${speaker.cargo}</div>
-        ${speaker.empresa ? `<div class="palestrantes__card-company">${speaker.empresa}</div>` : ''}
-        <div class="palestrantes__card-links">
-          ${socialLink('LinkedIn', speaker.linkedin)}
-          ${socialLink('Instagram', speaker.instagram)}
+    cardsContainer.innerHTML = speakers.map((speaker) => {
+      // Placeholder ("placeholder": true no JSON): card tracejado, só o nome,
+      // pra segurar o lugar enquanto o line-up não fecha.
+      const isPlaceholder = Boolean(speaker.placeholder);
+      const photo = speaker.foto
+        ? `<img src="${speaker.foto}" alt="">`
+        : (isPlaceholder ? '' : '<span>foto</span>');
+      const links = [
+        socialLink('LinkedIn', speaker.linkedin),
+        socialLink('Instagram', speaker.instagram),
+      ].filter(Boolean).join('');
+
+      return `
+        <div class="palestrantes__card${isPlaceholder ? ' palestrantes__card--placeholder' : ''}">
+          <div class="palestrantes__card-photo">${photo}</div>
+          <div class="palestrantes__card-name">${speaker.nome}</div>
+          ${speaker.cargo ? `<div class="palestrantes__card-role">${speaker.cargo}</div>` : ''}
+          ${speaker.empresa ? `<div class="palestrantes__card-company">${speaker.empresa}</div>` : ''}
+          ${links ? `<div class="palestrantes__card-links">${links}</div>` : ''}
         </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   } catch (error) {
-    console.warn('Não foi possível carregar data/speakers.json — sirva o site por um servidor local (ex.: python3 -m http.server).', error);
+    console.warn('Não foi possível carregar data/speakers.json. Sirva o site por um servidor local (ex.: python3 -m http.server).', error);
   }
 }
 
 // Seção Patrocínio: estado "em breve" ou logos por tier, conforme data/sponsors.json.
 // Sem patrocinador nenhum, o bloco "Patrocinadores confirmados" (com as vagas
-// tracejadas) some também — fica só o convite pra patrocinar.
+// tracejadas) some também, fica só o convite pra patrocinar.
 async function initPatrocinio() {
   const soonState = document.querySelector('.patrocinio__state[data-state="em-breve"]');
   const filledState = document.querySelector('.patrocinio__state[data-state="populado"]');
@@ -172,7 +182,7 @@ async function initPatrocinio() {
     soonState.hidden = true;
     filledState.hidden = false;
   } catch (error) {
-    console.warn('Não foi possível carregar data/sponsors.json — sirva o site por um servidor local (ex.: python3 -m http.server).', error);
+    console.warn('Não foi possível carregar data/sponsors.json. Sirva o site por um servidor local (ex.: python3 -m http.server).', error);
   }
 }
 
@@ -192,7 +202,7 @@ async function initFaq() {
       </details>
     `).join('');
   } catch (error) {
-    console.warn('Não foi possível carregar data/faq.json — sirva o site por um servidor local (ex.: python3 -m http.server).', error);
+    console.warn('Não foi possível carregar data/faq.json. Sirva o site por um servidor local (ex.: python3 -m http.server).', error);
   }
 }
 
