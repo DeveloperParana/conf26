@@ -1,4 +1,4 @@
-/* Palestrantes (#palestrantes) — estado deriva de data/speakers.js */
+/* Palestrantes (#palestrantes): cards saem de data/speakers.json */
 .palestrantes {
   background: var(--color-black);
   background-image: radial-gradient(var(--on-dark-08) 1px, transparent 1px);
@@ -20,61 +20,18 @@
   max-width: 52ch;
 }
 
-/* Estado "em breve": cards fantasma */
-.palestrantes__ghost-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--card-gap);
-  margin: clamp(32px, 4vw, 56px) 0 0;
-}
-
-.palestrantes__ghost-grid[hidden] {
-  display: none;
-}
-
-.palestrantes__ghost-card {
-  border: 1px dashed var(--on-dark-20);
-  border-radius: var(--radius-card);
-  padding: 18px;
-  background: var(--on-dark-03);
-}
-
-.palestrantes__ghost-photo {
-  aspect-ratio: 1 / 1;
-  border-radius: var(--radius-control);
-  background-color: var(--on-dark-05);
-  background-image: repeating-linear-gradient(135deg, var(--on-dark-06) 0 10px, transparent 10px 20px);
-  display: grid;
-  place-items: center;
-}
-
-.palestrantes__ghost-photo span {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--on-dark-40);
-}
-
-.palestrantes__ghost-bar {
-  height: 11px;
-  border-radius: 3px;
-  background: var(--on-dark-14);
-  margin: 16px 0 8px;
-}
-
-.palestrantes__ghost-bar--small {
-  height: 9px;
-  border-radius: 3px;
-  background: var(--on-dark-09);
-  margin: 0;
-}
-
-/* Estado populado: grid centralizado de cards reais */
+/* Grid centralizado de cards reais */
 .palestrantes__cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--card-gap);
   margin: clamp(32px, 4vw, 56px) 0 0;
+}
+
+/* Sem palestrante no JSON o container fica vazio, então não reserva a margem à toa */
+.palestrantes__cards:empty {
+  display: none;
 }
 
 .palestrantes__card {
@@ -98,9 +55,38 @@
   transform: translateY(-3px);
 }
 
+/* Placeholder: segura o lugar de um nome ainda não anunciado */
+.palestrantes__card--placeholder {
+  border-style: dashed;
+  border-color: var(--on-dark-16);
+  background: var(--on-dark-03);
+  /* Centraliza o pouco conteúdo (círculo + "Em breve!") no card, que estica
+     pra acompanhar a altura do card do Téo na mesma linha. */
+  justify-content: center;
+}
+
+.palestrantes__card--placeholder:hover {
+  border-color: var(--on-dark-16);
+  background: var(--on-dark-03);
+  transform: none;
+}
+
+.palestrantes__card--placeholder .palestrantes__card-photo {
+  opacity: .5;
+}
+
+.palestrantes__card--placeholder .palestrantes__card-name {
+  color: var(--on-dark-40);
+  font-weight: 500;
+}
+
 .palestrantes__card-photo {
+  /* width + height fixos (não só aspect-ratio): como flex item de um card que
+     pode esticar, o aspect-ratio sozinho deixava o círculo vazio do placeholder
+     crescer junto com o card. */
   width: clamp(92px, 9vw, 124px);
-  aspect-ratio: 1 / 1;
+  height: clamp(92px, 9vw, 124px);
+  flex: none;
   border-radius: 50%;
   background-color: var(--on-dark-06);
   background-image: repeating-linear-gradient(135deg, var(--on-dark-07) 0 10px, transparent 10px 20px);
@@ -143,111 +129,29 @@
   margin-top: 6px;
 }
 
-.palestrantes__card-linkedin {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--on-dark-45);
+.palestrantes__card-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
   margin-top: 16px;
 }
 
-/* Lista compacta: só no celular (grid centralizado continua no desktop) */
-.palestrantes__list {
-  display: none;
-}
-
-@media (max-width: 759px) {
-  .palestrantes__cards {
-    display: none;
-  }
-
-  .palestrantes__list {
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid var(--on-dark-14);
-    margin: clamp(32px, 4vw, 56px) 0 0;
-  }
-}
-
-.palestrantes__list-row {
-  display: grid;
-  grid-template-columns: 52px 1fr auto;
-  gap: 14px;
-  align-items: center;
-  padding: 14px 10px;
-  border-bottom: 1px solid var(--on-dark-12);
-  text-decoration: none;
-  transition: background var(--transition-default);
-}
-
-.palestrantes__list-row:hover {
-  background: var(--tint-green-10);
-}
-
-.palestrantes__list-photo {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background-color: var(--on-dark-07);
-  background-image: repeating-linear-gradient(135deg, var(--on-dark-07) 0 8px, transparent 8px 16px);
-  display: grid;
-  place-items: center;
-}
-
-.palestrantes__list-photo span {
-  font-family: var(--font-mono);
-  font-size: 9.5px;
-  color: var(--on-dark-45);
-}
-
-.palestrantes__list-photo img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.palestrantes__list-info {
-  /* Sem isso, colunas grid "auto"/"1fr" não encolhem e a linha estoura a tela */
-  min-width: 0;
-}
-
-.palestrantes__list-name {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 16px;
-  color: var(--color-off-white);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.palestrantes__list-role {
-  font-size: 13.5px;
-  line-height: 1.5;
-  color: var(--on-dark-60);
-  margin-top: 3px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.palestrantes__list-meta {
-  min-width: 0;
-  text-align: right;
-}
-
-.palestrantes__list-company {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--color-green-bright);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.palestrantes__list-linkedin {
+.palestrantes__card-link {
   font-family: var(--font-mono);
   font-size: 11.5px;
   color: var(--on-dark-45);
-  margin-top: 4px;
+  text-decoration: none;
+  transition: color var(--transition-default);
+}
+
+.palestrantes__card-link:hover {
+  color: var(--color-green-bright);
+}
+
+@media (max-width: 759px) {
+  /* Poucos nomes confirmados: o card centralizado já resolve bem no celular. */
+  .palestrantes__card {
+    flex-basis: 260px;
+  }
 }
