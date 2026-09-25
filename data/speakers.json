@@ -8,9 +8,30 @@
     "foto": "assets/speakers/teo-calvo.jpg",
     "bio": "Téo Calvo é estatístico, criador do canal Téo Me Why e referência em ensino de dados no Brasil. Já liderou áreas de dados na Globo e na Gamers Club, e hoje ensina Python, SQL, Estatística e Machine Learning para milhares de pessoas."
   },
-  { "nome": "Em breve!", "placeholder": true },
-  { "nome": "Em breve!", "placeholder": true },
-  { "nome": "Em breve!", "placeholder": true },
+  {
+    "nome": "Daniel H. Hey",
+    "cargo": "Founder/CEO",
+    "empresa": "Neuron",
+    "linkedin": "https://www.linkedin.com/in/dfhey/",
+    "instagram": "https://www.instagram.com/dfhey/",
+    "foto": "assets/speakers/daniel-hey.jpg"
+  },
+  {
+    "nome": "Jeferson Fernando",
+    "cargo": "Senior Principal Engineer / Founder",
+    "empresa": "iFood / LINUXtips",
+    "linkedin": "https://www.linkedin.com/in/jefersonfernando/",
+    "instagram": "https://www.instagram.com/linuxtipsbr/",
+    "foto": "assets/speakers/jeferson-fernando.jpg"
+  },
+  {
+    "nome": "Camis Moreira",
+    "cargo": "Coordenadora de Tecnologia / Founder",
+    "empresa": "TOTVS / Portera Tech",
+    "linkedin": "https://www.linkedin.com/in/camismoreira/",
+    "instagram": "https://www.instagram.com/camiiismoreira",
+    "foto": "assets/speakers/camis-moreira.jpg"
+  },
   { "nome": "Em breve!", "placeholder": true },
   { "nome": "Em breve!", "placeholder": true },
   { "nome": "Em breve!", "placeholder": true }

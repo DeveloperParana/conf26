@@ -103,6 +103,12 @@
 .palestrantes__card-photo img {
   width: 100%;
   height: 100%;
+  /* aspect-ratio força o quadrado: sem isso, o height: 100% não resolve
+     dentro do flex item (o container fica quadrado, mas a img herda a
+     proporção da foto original), então uma foto retrato vira oval depois
+     do border-radius. Com foto quadrada (caso do Téo Calvo) o bug fica
+     invisível por coincidência. */
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
 }
