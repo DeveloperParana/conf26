@@ -132,7 +132,11 @@
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--color-green-bright);
-  margin-top: 6px;
+  /* margin-top: auto empurra empresa + links pro fim do card (que estica pra
+     igualar a linha), então ficam alinhados mesmo quando o cargo quebra em
+     duas linhas num card e em uma noutro. */
+  margin-top: auto;
+  padding-top: 6px;
 }
 
 .palestrantes__card-links {
