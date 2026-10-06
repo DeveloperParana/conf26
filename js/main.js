@@ -155,7 +155,8 @@ async function initPatrocinio() {
     const tiers = [
       { key: 'ouro', label: 'Ouro' },
       { key: 'prata', label: 'Prata' },
-      { key: 'bronze', label: 'Bronze / Apoio e comunidades' },
+      { key: 'apoio-institucional', label: 'Apoio institucional' },
+      { key: 'media-partner', label: 'Media Partners' },
     ];
 
     groupsContainer.innerHTML = tiers.map((tier) => {
@@ -163,7 +164,7 @@ async function initPatrocinio() {
       if (tierSponsors.length === 0) return '';
 
       const slots = tierSponsors.map((sponsor) => `
-        <a href="${sponsor.url}" target="_blank" rel="noopener" class="patrocinio__slot patrocinio__slot--filled">
+        <a href="${sponsor.url}" target="_blank" rel="noopener" class="patrocinio__slot patrocinio__slot--filled${sponsor.bg === 'dark' ? ' patrocinio__slot--bg-dark' : ''}">
           ${sponsor.logo ? `<img src="${sponsor.logo}" alt="${sponsor.nome}">` : `<span>${sponsor.nome}</span>`}
         </a>
       `).join('');

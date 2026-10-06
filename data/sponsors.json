@@ -1,1 +1,8 @@
-[]
+[
+  { "tier": "ouro", "nome": "Irrahtech", "logo": "assets/sponsors/logo-irrahtech.svg", "url": "#" },
+  { "tier": "ouro", "nome": "DB1", "logo": "assets/sponsors/logo-db1.png", "url": "#" },
+  { "tier": "apoio-institucional", "nome": "Prefeitura de Maringá", "logo": "assets/sponsors/prefeitura-maringa.svg", "url": "#" },
+  { "tier": "apoio-institucional", "nome": "Sebrae", "logo": "assets/sponsors/sebrae.svg", "url": "#" },
+  { "tier": "media-partner", "nome": "Triunfo Media Out of Home", "logo": "assets/sponsors/triunfo.png", "url": "#" },
+  { "tier": "media-partner", "nome": "Maringá Post", "logo": "assets/sponsors/maringa-post.png", "url": "#" }
+]
