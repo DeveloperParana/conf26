@@ -1,0 +1,24 @@
+/* Caravanas (#caravanas) — bloco entre Local (fundo escuro) e FAQ. Mesmo
+   padrão de alinhamento à esquerda usado em todas as outras seções, dentro de
+   um card branco com borda igual ao de Patrocínio (.patrocinio__card). */
+.caravanas {
+  background: var(--color-off-white);
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.caravanas__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  background: var(--color-white);
+  border: 1px solid var(--on-light-09);
+  border-radius: var(--radius-container);
+  padding: clamp(26px, 3.4vw, 56px);
+}
+
+.caravanas__heading {
+  max-width: 24ch;
+}
+
+.caravanas__button {
+  margin-top: clamp(24px, 2.8vw, 36px);
+}

@@ -1,7 +1,8 @@
-/* FAQ (#faq) */
+/* FAQ (#faq) — sem padding no topo: vem logo depois de Caravanas, mesmo fundo
+   off-white, pra não dobrar o espaço entre as duas */
 .faq {
   background: var(--color-off-white);
-  padding: var(--section-padding-y) var(--section-padding-x);
+  padding: 0 var(--section-padding-x) var(--section-padding-y);
 }
 
 .faq__inner {
