@@ -53,6 +53,18 @@
   background: var(--color-green-forest);
 }
 
+/* Estado "inscrições encerradas": mesma pegada do badge --disabled em Ingressos */
+.cfp__status-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--on-light-24);
+  color: var(--on-light-60);
+  font-weight: 600;
+  font-size: clamp(15px, 1.4vw, 17px);
+  padding: 16px 28px;
+  border-radius: var(--radius-control);
+}
+
 .cfp__note {
   font-family: var(--font-mono);
   font-size: 12.5px;

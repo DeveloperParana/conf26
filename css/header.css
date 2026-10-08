@@ -159,22 +159,6 @@
   border-bottom: none;
 }
 
-.header__mobile-cfp {
-  margin-top: 14px;
-  text-align: center;
-  border: 1px solid var(--on-dark-24);
-  color: var(--color-off-white);
-  font-weight: 600;
-  font-size: 15px;
-  padding: 14px 20px;
-  border-radius: var(--radius-control);
-}
-
-.header__mobile-cfp:hover {
-  color: var(--color-green-bright);
-  border-color: var(--color-green-bright);
-}
-
 /* Breakpoint da navegação: 900px, medido no conteúdo real (logo + 7 links +
    botão) — abaixo disso o menu desktop começa a cortar itens silenciosamente
    (overflow-x:auto sem barra visível), então trocamos pro mobile antes disso. */
