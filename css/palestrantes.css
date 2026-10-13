@@ -135,6 +135,18 @@
   margin-top: 6px;
 }
 
+.palestrantes__card-topic {
+  font-size: 13px;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--on-dark-72);
+  margin-top: 12px;
+  /* Reserva sempre 3 linhas, mesmo pra temas curtos: sem isso a linha de
+     LinkedIn/Instagram fica em alturas diferentes entre os cards de uma
+     mesma fileira, dependendo de quantas linhas o tema ocupa. */
+  min-height: calc(3 * 13px * 1.5);
+}
+
 .palestrantes__card-links {
   display: flex;
   flex-wrap: wrap;

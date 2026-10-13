@@ -113,10 +113,14 @@ async function initPalestrantes() {
       const photo = speaker.foto
         ? `<img src="${speaker.foto}" alt="">`
         : (isPlaceholder ? '' : '<span>foto</span>');
-      const links = [
-        socialLink('LinkedIn', speaker.linkedin),
-        socialLink('Instagram', speaker.instagram),
-      ].filter(Boolean).join('');
+      // "links" no JSON substitui linkedin/instagram quando o card é de mais
+      // de uma pessoa (cada link já leva o nome de quem ele é, no label).
+      const links = speaker.links
+        ? speaker.links.map((link) => socialLink(link.label, link.url)).join('')
+        : [
+          socialLink('LinkedIn', speaker.linkedin),
+          socialLink('Instagram', speaker.instagram),
+        ].filter(Boolean).join('');
 
       return `
         <div class="palestrantes__card${isPlaceholder ? ' palestrantes__card--placeholder' : ''}">
@@ -124,6 +128,7 @@ async function initPalestrantes() {
           <div class="palestrantes__card-name">${speaker.nome}</div>
           ${speaker.cargo ? `<div class="palestrantes__card-role">${speaker.cargo}</div>` : ''}
           ${speaker.empresa ? `<div class="palestrantes__card-company">${speaker.empresa}</div>` : ''}
+          ${speaker.tema ? `<div class="palestrantes__card-topic">“${speaker.tema}”</div>` : ''}
           ${links ? `<div class="palestrantes__card-links">${links}</div>` : ''}
         </div>
       `;

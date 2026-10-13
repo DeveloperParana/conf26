@@ -6,15 +6,17 @@
     "linkedin": "https://www.linkedin.com/in/teocalvo/",
     "instagram": "https://www.instagram.com/teomewhy/",
     "foto": "assets/speakers/teo-calvo.jpg",
-    "bio": "Téo Calvo é estatístico, criador do canal Téo Me Why e referência em ensino de dados no Brasil. Já liderou áreas de dados na Globo e na Gamers Club, e hoje ensina Python, SQL, Estatística e Machine Learning para milhares de pessoas."
+    "bio": "Téo Calvo é estatístico, criador do canal Téo Me Why e referência em ensino de dados no Brasil. Já liderou áreas de dados na Globo e na Gamers Club, e hoje ensina Python, SQL, Estatística e Machine Learning para milhares de pessoas.",
+    "tema": "Sim! Você ainda precisa de uma Feature Store"
   },
   {
-    "nome": "Daniel H. Hey",
+    "nome": "Daniel F. Hey",
     "cargo": "Founder/CEO",
     "empresa": "Neuron",
     "linkedin": "https://www.linkedin.com/in/dfhey/",
     "instagram": "https://www.instagram.com/dfhey/",
-    "foto": "assets/speakers/daniel-hey.jpg"
+    "foto": "assets/speakers/daniel-hey.jpg",
+    "tema": "IA e Fluência Digital: o papel estratégico do profissional de TI nas organizações"
   },
   {
     "nome": "Jeferson Fernando",
@@ -22,7 +24,8 @@
     "empresa": "iFood / LINUXtips",
     "linkedin": "https://www.linkedin.com/in/jefersonfernando/",
     "instagram": "https://www.instagram.com/linuxtipsbr/",
-    "foto": "assets/speakers/jeferson-fernando.jpg"
+    "foto": "assets/speakers/jeferson-fernando.jpg",
+    "tema": "7 horas de vídeo e você ainda não sabe resolver um incidente"
   },
   {
     "nome": "Camis Moreira",
@@ -30,9 +33,20 @@
     "empresa": "TOTVS / Portera Tech",
     "linkedin": "https://www.linkedin.com/in/camismoreira/",
     "instagram": "https://www.instagram.com/camiiismoreira",
-    "foto": "assets/speakers/camis-moreira.jpg"
+    "foto": "assets/speakers/camis-moreira.jpg",
+    "tema": "Virei tech lead, e agora?"
   },
-  { "nome": "Em breve!", "placeholder": true },
+  {
+    "nome": "João Brito e Dri Cardoso",
+    "cargo": "João, Customer Success Engineer / Dri, CEO",
+    "empresa": "IBM / NEUROPSI.io",
+    "foto": "assets/speakers/joao-dri.jpg",
+    "tema": "Código e Cérebro: saúde e performance em comunidades tech de alta demanda cognitiva",
+    "links": [
+      { "label": "Dri no LinkedIn", "url": "https://www.linkedin.com/in/dricardoso" },
+      { "label": "João no Linktree", "url": "https://linktr.ee/juniorjbn" }
+    ]
+  },
   { "nome": "Em breve!", "placeholder": true },
   { "nome": "Em breve!", "placeholder": true }
 ]

@@ -159,10 +159,11 @@
   border-bottom: none;
 }
 
-/* Breakpoint da navegação: 900px, medido no conteúdo real (logo + 7 links +
-   botão) — abaixo disso o menu desktop começa a cortar itens silenciosamente
-   (overflow-x:auto sem barra visível), então trocamos pro mobile antes disso. */
-@media (max-width: 899px) {
+/* Breakpoint da navegação: 1020px, medido no conteúdo real (logo + 8 links +
+   botão, depois que Caravanas entrou no menu) — abaixo disso o menu desktop
+   começa a cortar itens silenciosamente (overflow-x:auto sem barra visível),
+   então trocamos pro mobile antes disso. */
+@media (max-width: 1019px) {
   .header__nav,
   .header__cta {
     display: none;
@@ -173,7 +174,7 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1020px) {
   .header__mobile-actions,
   .header__mobile-nav {
     display: none;
