@@ -120,12 +120,23 @@
   line-height: 1.25;
   color: var(--color-off-white);
   margin: 18px 0 6px;
+  /* Reserva 2 linhas: nome de palestra em dupla ("Fulano e Ciclana") quebra
+     linha, nome individual não. Sem isso, tudo abaixo (cargo, empresa, tema,
+     links) desalinha entre os cards de uma fileira. */
+  display: flex;
+  align-items: center;
+  min-height: calc(2 * 17px * 1.25);
 }
 
 .palestrantes__card-role {
   font-size: 13.5px;
   line-height: 1.45;
   color: var(--on-dark-60);
+  /* Mesmo motivo do nome: cargo de dupla ("Fulano, X / Ciclana, Y") quebra
+     em 2 linhas, cargo individual geralmente cabe em 1. */
+  display: flex;
+  align-items: center;
+  min-height: calc(2 * 13.5px * 1.45);
 }
 
 .palestrantes__card-company {

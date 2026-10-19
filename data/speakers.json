@@ -47,6 +47,23 @@
       { "label": "João no Linktree", "url": "https://linktr.ee/juniorjbn" }
     ]
   },
-  { "nome": "Em breve!", "placeholder": true },
-  { "nome": "Em breve!", "placeholder": true }
+  {
+    "nome": "Mayara Fagundes",
+    "cargo": "Gerente de Projetos",
+    "empresa": "Dataex",
+    "linkedin": "https://www.linkedin.com/in/mayara-fagundes",
+    "foto": "assets/speakers/mayara-fagundes.jpg",
+    "tema": "Deploy não é entrega: os desafios invisíveis de colocar Dados e IA em produção"
+  },
+  {
+    "nome": "Camila Rodrigues e Fernando Gomes",
+    "cargo": "Camila, Global Recruiter / Fernando, Staff Engineer",
+    "empresa": "Sigma / Incomm Payments",
+    "foto": "assets/speakers/camila-fernando.jpg",
+    "tema": "O mercado internacional para devs em 2026: Your Code isn’t Enough",
+    "links": [
+      { "label": "Camila no LinkedIn", "url": "https://www.linkedin.com/in/camirodrigues/" },
+      { "label": "Fernando no LinkedIn", "url": "https://www.linkedin.com/in/fhgomes/" }
+    ]
+  }
 ]
