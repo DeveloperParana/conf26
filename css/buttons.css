@@ -31,7 +31,7 @@
   color: var(--color-green-bright);
 }
 
-/* Versão compacta (CFP, Palestrantes, Patrocínio) */
+/* Versão compacta (Patrocínio) */
 .btn--sm {
   font-size: 15px;
   padding: 14px 24px;

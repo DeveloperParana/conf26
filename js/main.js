@@ -7,16 +7,11 @@ function dataUrl(name) {
   return isPreview && mockable.includes(name) ? `data/${name}.mock.json` : `data/${name}.json`;
 }
 
-// Botões que apontam pra ingressos/CFP/e-mail de contato: URL vem de data/config.js
+// Botões que apontam pra ingressos/e-mail de contato: URL vem de data/config.js
 /* global CONFIG */
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-link="tickets"]').forEach((link) => {
     link.href = CONFIG.ticketsUrl;
-    link.target = '_blank';
-    link.rel = 'noopener';
-  });
-  document.querySelectorAll('[data-link="cfp"]').forEach((link) => {
-    link.href = CONFIG.cfpUrl;
     link.target = '_blank';
     link.rel = 'noopener';
   });
@@ -212,9 +207,65 @@ async function initFaq() {
   }
 }
 
+// Seção Universitário no DevParaná: parallax da foto de fundo e dos ícones
+// SVG. Cada um (inclusive a <img> de fundo) tem um data-depth (0 a 1) que
+// define o quanto se move em relação ao scroll — quanto maior, mais "perto
+// da câmera" parece. Todos relativos à própria seção via getBoundingClientRect.
+function initParallax() {
+  const section = document.querySelector('.universitarios');
+  if (!section) return;
+
+  const icons = section.querySelectorAll('[data-depth]');
+  if (!icons.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Limita o deslocamento máximo: sem isso, quando a seção está longe do
+  // viewport (ex.: entrando de baixo, rect.top grande), o ícone se move
+  // pixels demais e acaba saindo da área visível (cortado pelo overflow:
+  // hidden da seção).
+  const MAX_SHIFT_PX = 65;
+
+  let ticking = false;
+  const update = () => {
+    const rect = section.getBoundingClientRect();
+    icons.forEach((icon) => {
+      const depth = parseFloat(icon.dataset.depth);
+      const shift = Math.max(-MAX_SHIFT_PX, Math.min(MAX_SHIFT_PX, rect.top * depth));
+      icon.style.transform = `translateY(${shift}px)`;
+    });
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  }, { passive: true });
+
+  update();
+}
+
+// Modal do regulamento do desconto universitário (<dialog> nativo). O botão
+// "×" fecha sozinho via <form method="dialog">; só precisamos de JS pra abrir
+// e pra fechar clicando fora (no ::backdrop, que é o próprio elemento
+// <dialog> — clique no conteúdo não propaga até ele).
+function initRulesModal() {
+  const dialog = document.getElementById('universitarios-rules');
+  const openButton = document.querySelector('[data-rules-open]');
+  if (!dialog || !openButton) return;
+
+  openButton.addEventListener('click', () => dialog.showModal());
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initProgramacao();
   initPalestrantes();
   initPatrocinio();
   initFaq();
+  initParallax();
+  initRulesModal();
 });

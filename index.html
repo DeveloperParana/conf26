@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="css/hero.css">
 <link rel="stylesheet" href="css/stats.css">
 <link rel="stylesheet" href="css/sobre.css">
-<link rel="stylesheet" href="css/cfp.css">
+<link rel="stylesheet" href="css/universitarios.css">
 <link rel="stylesheet" href="css/programacao.css">
 <link rel="stylesheet" href="css/palestrantes.css">
 <link rel="stylesheet" href="css/ingressos.css">
@@ -57,7 +57,7 @@
     <!-- Navegação e CTA de telas grandes (≥ 900px) -->
     <nav class="header__nav">
       <a href="#sobre">Sobre</a>
-      <a href="#cfp">Call for Papers</a>
+      <a href="#universitarios">Universitários</a>
       <a href="#programacao">Programação</a>
       <a href="#palestrantes">Palestrantes</a>
       <a href="#caravanas">Caravanas</a>
@@ -81,7 +81,7 @@
   <!-- Painel do menu mobile -->
   <nav class="header__mobile-nav" hidden>
     <a href="#sobre" class="header__mobile-link">Sobre</a>
-    <a href="#cfp" class="header__mobile-link">Call for Papers</a>
+    <a href="#universitarios" class="header__mobile-link">Universitários</a>
     <a href="#programacao" class="header__mobile-link">Programação</a>
     <a href="#palestrantes" class="header__mobile-link">Palestrantes</a>
     <a href="#caravanas" class="header__mobile-link">Caravanas</a>
@@ -189,38 +189,68 @@
     </div>
   </section>
 
-  <!-- Seção inteira removível quando o CFP fechar -->
-  <section class="cfp" id="cfp">
-    <div class="cfp__inner">
-      <div class="eyebrow cfp__eyebrow">Call for Papers</div>
-      <h2 class="section-heading cfp__heading">Sua palestra no palco principal</h2>
-      <p class="section-lead cfp__lead">Inscrições e curadoria encerradas! Com muito carinho, escolhemos as 7 palestras que sobem ao palco na 11ª edição, o line-up completo já está anunciado logo abaixo.</p>
-      <div class="cfp__actions">
-        <span class="cfp__status-badge">C4P encerrado</span>
-        <span class="cfp__note">line-up já anunciado</span>
+  <!-- Fundo: araucária contra o céu estrelado (assets/universitarios/araucaria-night.jpg).
+       Parallax em camadas via JS (initParallax() em js/main.js): a foto e os
+       ícones SVG têm cada um seu próprio data-depth e se movem em
+       velocidades diferentes conforme a rolagem, todos relativos à própria
+       seção (nada de background-attachment: fixed, que posiciona em relação
+       à janela do navegador e fica imprevisível). -->
+  <section class="universitarios" id="universitarios">
+    <img class="universitarios__bg" data-depth="0.14" src="assets/universitarios/araucaria-night.jpg" alt="" aria-hidden="true">
+    <div class="universitarios__overlay" aria-hidden="true"></div>
+    <div class="universitarios__parallax" aria-hidden="true">
+      <svg class="universitarios__icon universitarios__icon--brackets" data-depth="0.1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 4 3 12 8 20"/><polyline points="16 4 21 12 16 20"/></svg>
+      <svg class="universitarios__icon universitarios__icon--terminal" data-depth="0.18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><polyline points="6.5 9 10.5 12 6.5 15"/><line x1="12.5" y1="15" x2="17" y2="15"/></svg>
+      <svg class="universitarios__icon universitarios__icon--branch" data-depth="0.13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="4" x2="6" y2="20"/><circle cx="6" cy="4" r="2"/><circle cx="6" cy="20" r="2"/><circle cx="18" cy="8" r="2"/><path d="M6 13 C6 9.5 14 10 16.3 8.6"/></svg>
+      <svg class="universitarios__icon universitarios__icon--braces" data-depth="0.22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4c-2 0-2.5 1-2.5 3v3c0 1.3-.5 2-2 2 1.5 0 2 .7 2 2v3c0 2 .5 3 2.5 3"/><path d="M15 4c2 0 2.5 1 2.5 3v3c0 1.3.5 2 2 2-1.5 0-2 .7-2 2v3c0 2-.5 3-2.5 3"/></svg>
+      <svg class="universitarios__icon universitarios__icon--binary" data-depth="0.15" viewBox="0 0 40 20" fill="none"><text x="0" y="16" font-family="var(--font-mono)" font-size="16" fill="currentColor">01</text></svg>
+    </div>
+
+    <div class="universitarios__inner">
+      <div class="eyebrow eyebrow--on-dark universitarios__eyebrow">Universitário no DevParaná</div>
+      <h2 class="section-heading section-heading--on-dark universitarios__heading">Sua sala já foi visitada? Pode ter desconto</h2>
+      <p class="section-lead section-lead--on-dark universitarios__lead">Se um membro da associação já passou na sua sala de aula, você pode estar elegível a um desconto de até <strong>35%</strong> no ingresso. Preenche o formulário abaixo pra mostrar que tá dentro.</p>
+
+      <div class="universitarios__buttons">
+        <a href="https://forms.gle/p4Z9wdMQcYY4WRdY9" target="_blank" rel="noopener" class="btn btn--primary universitarios__button">Quero meu desconto</a>
       </div>
 
-      <div class="cfp__how">
-        <div class="cfp__how-eyebrow">Como funciona</div>
-        <div class="cfp__how-steps">
-          <div class="cfp__how-step">
-            <span class="cfp__how-step-number">01</span>
-            <span class="cfp__how-step-text">Inscrição: formulário com nome completo, telefone e e-mail de contato, título e resumo da palestra, nível, foto e uma bio curta para divulgação.</span>
-          </div>
-          <div class="cfp__how-step">
-            <span class="cfp__how-step-number">02</span>
-            <span class="cfp__how-step-text">Avaliação técnica: nossa curadoria avaliou todas as propostas enviadas.</span>
-          </div>
-          <div class="cfp__how-step">
-            <span class="cfp__how-step-number">03</span>
-            <span class="cfp__how-step-text">Confirmação: avisamos os resultados por e-mail para quem se inscreveu.</span>
-          </div>
-        </div>
+      <div class="universitarios__how">
+        <div class="universitarios__how-eyebrow">Como funciona</div>
+        <p class="universitarios__how-text">O desconto é proporcional ao número de interessados da turma: começa em <strong>10% com 10 pessoas</strong> e sobe até o teto de <strong>35% com 35 pessoas</strong> (acima disso, continua em 35%). A resposta ao formulário precisa ser feita na mesma noite da visita à sua universidade.</p>
+        <button type="button" class="universitarios__rules-link" data-rules-open>Ver regulamento completo</button>
       </div>
-
-      <p class="cfp__disclaimer">A hospedagem e o deslocamento ficam por conta do palestrante.</p>
     </div>
   </section>
+
+  <dialog class="rules-modal" id="universitarios-rules">
+    <form method="dialog" class="rules-modal__inner">
+      <button type="submit" class="rules-modal__close" aria-label="Fechar regulamento">&times;</button>
+
+      <div class="eyebrow eyebrow--on-dark">Regulamento</div>
+      <h2 class="rules-modal__heading">Desconto universitário</h2>
+
+      <ol class="rules-modal__rules">
+        <li class="rules-modal__rule">
+          <h3 class="rules-modal__rule-title">1. Prazo de resposta</h3>
+          <p class="rules-modal__rule-text">A resposta ao formulário de interesse precisa ser feita na mesma noite em que um membro da associação visitar a sua sala. Respostas fora da data da visita da sua instituição não são consideradas.</p>
+          <ul class="rules-modal__calendar">
+            <li><span>UniCive</span><span>19/10 e 26/10</span></li>
+            <li><span>Unicesumar</span><span>20/10 a 29/10</span></li>
+            <li><span>Senac</span><span>30/10</span></li>
+          </ul>
+        </li>
+        <li class="rules-modal__rule">
+          <h3 class="rules-modal__rule-title">2. Desconto proporcional</h3>
+          <p class="rules-modal__rule-text">O desconto sobe junto com o número de interessados da turma: mínimo de <strong>10 pessoas para 10%</strong>, até o teto de <strong>35 pessoas para 35%</strong> (a cada interessado a mais, o desconto sobe 1 ponto percentual). Depois de atingir 35 interessados, o desconto permanece fixo em 35%.</p>
+        </li>
+        <li class="rules-modal__rule">
+          <h3 class="rules-modal__rule-title">3. Não transferível</h3>
+          <p class="rules-modal__rule-text">O desconto é pessoal e intransferível pra outra pessoa. Pra garantir o seu, é necessário informar RA, turma e e-mail acadêmico no formulário.</p>
+        </li>
+      </ol>
+    </form>
+  </dialog>
 
   <section class="programacao" id="programacao">
     <div class="programacao__inner">
@@ -479,7 +509,7 @@
         <div class="footer__links">
           <a href="#programacao">Programação</a>
           <a href="#ingressos">Ingressos</a>
-          <a href="#cfp">Call for Papers</a>
+          <a href="#universitarios">Universitários</a>
           <a href="#patrocinio">Patrocínio</a>
           <a href="#local">Local</a>
         </div>

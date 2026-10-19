@@ -1,0 +1,291 @@
+/* Universitário no DevParaná (#universitarios) — única seção com foto de
+   fundo (araucária contra o céu estrelado, assets/universitarios/). Parallax
+   em camadas via JS: a foto (.universitarios__bg) e os ícones SVG têm cada
+   um seu data-depth e se movem em velocidades diferentes conforme a
+   rolagem, sempre relativos à própria seção (initParallax() em
+   js/main.js). Nada de background-attachment: fixed — ele posiciona em
+   relação à janela do navegador, não ao elemento, e fica imprevisível. */
+.universitarios {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-black);
+  padding: clamp(64px, 8vw, 112px) var(--section-padding-x);
+}
+
+.universitarios__bg {
+  position: absolute;
+  z-index: 0;
+  top: -15%;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  object-fit: cover;
+  object-position: center 42%;
+  will-change: transform;
+}
+
+.universitarios__overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(8, 9, 10, .92) 0%, rgba(8, 9, 10, .6) 38%, rgba(8, 9, 10, .25) 62%, rgba(8, 9, 10, .35) 100%);
+}
+
+.universitarios__inner {
+  position: relative;
+  z-index: 3;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.universitarios__heading {
+  font-size: clamp(28px, 3.8vw, 52px);
+  max-width: 22ch;
+  margin-top: 12px;
+}
+
+.universitarios__lead {
+  max-width: 54ch;
+  margin-top: 14px;
+}
+
+.universitarios__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: clamp(24px, 2.8vw, 36px) 0 0;
+}
+
+.universitarios__how {
+  margin: clamp(28px, 3.2vw, 44px) 0 0;
+  background: rgba(8, 9, 10, .62);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--on-dark-14);
+  border-radius: var(--radius-card-lg);
+  padding: var(--card-padding);
+  max-width: 46em;
+}
+
+.universitarios__how-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--color-green-bright);
+}
+
+.universitarios__how-text {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--on-dark-80);
+  margin-top: 12px;
+}
+
+.universitarios__how-text strong {
+  color: var(--color-off-white);
+  font-weight: 600;
+}
+
+.universitarios__rules-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--color-green-bright);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.universitarios__rules-link:hover {
+  color: var(--color-off-white);
+}
+
+/* Ícones SVG "constelação dev" — flutuam sobre o céu estrelado, longe do
+   texto (que é alinhado à esquerda), com profundidades diferentes pro
+   parallax. Decorativos, escondidos de leitor de tela (aria-hidden na mãe). */
+.universitarios__parallax {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+}
+
+.universitarios__icon {
+  position: absolute;
+  color: var(--color-green-bright);
+  filter: drop-shadow(0 0 7px rgba(53, 212, 110, .35));
+  will-change: transform;
+}
+
+.universitarios__icon--brackets {
+  top: 10%;
+  left: 56%;
+  width: 34px;
+  height: 34px;
+  opacity: .55;
+}
+
+.universitarios__icon--terminal {
+  top: 58%;
+  left: 83%;
+  width: 38px;
+  height: 38px;
+  color: var(--on-dark-55);
+  filter: none;
+  opacity: .5;
+}
+
+.universitarios__icon--branch {
+  top: 82%;
+  left: 66%;
+  width: 30px;
+  height: 30px;
+  opacity: .45;
+}
+
+.universitarios__icon--braces {
+  top: 16%;
+  left: 86%;
+  width: 32px;
+  height: 32px;
+  color: var(--on-dark-55);
+  filter: none;
+  opacity: .4;
+}
+
+.universitarios__icon--binary {
+  top: 38%;
+  left: 68%;
+  width: 40px;
+  height: 20px;
+  opacity: .5;
+}
+
+/* Sem espaço sobrando pra flutuar sem brigar com o texto no mobile */
+@media (max-width: 759px) {
+  .universitarios__parallax {
+    display: none;
+  }
+}
+
+/* Modal do regulamento (<dialog> nativo) — mesma linguagem visual do resto
+   do site: card escuro, borda sutil, eyebrow verde. O navegador cuida de
+   centralizar, travar o foco e fechar com Esc; só estilizamos o conteúdo e
+   o ::backdrop. */
+.rules-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  max-width: min(640px, calc(100vw - 40px));
+  max-height: min(85vh, 720px);
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--on-dark-14);
+  border-radius: var(--radius-card-lg);
+  background: var(--color-black);
+  color: var(--color-off-white);
+}
+
+.rules-modal::backdrop {
+  background: rgba(8, 9, 10, .72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.rules-modal__inner {
+  position: relative;
+  overflow-y: auto;
+  max-height: inherit;
+  padding: clamp(28px, 4vw, 44px);
+}
+
+.rules-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--on-dark-16);
+  border-radius: 50%;
+  background: none;
+  color: var(--on-dark-66);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--transition-default), border-color var(--transition-default);
+}
+
+.rules-modal__close:hover {
+  color: var(--color-off-white);
+  border-color: var(--color-green-bright);
+}
+
+.rules-modal__heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  margin: 10px 0 0;
+  padding-right: 32px;
+}
+
+.rules-modal__rules {
+  list-style: none;
+  margin: clamp(22px, 2.6vw, 30px) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.4vw, 28px);
+}
+
+.rules-modal__rule-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-off-white);
+}
+
+.rules-modal__rule-text {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--on-dark-80);
+  margin-top: 8px;
+}
+
+.rules-modal__rule-text strong {
+  color: var(--color-green-bright);
+  font-weight: 600;
+}
+
+.rules-modal__calendar {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rules-modal__calendar li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid var(--on-dark-12);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+}
+
+.rules-modal__calendar li span:first-child {
+  font-weight: 600;
+  color: var(--color-off-white);
+}
+
+.rules-modal__calendar li span:last-child {
+  font-family: var(--font-mono);
+  color: var(--color-green-bright);
+}
