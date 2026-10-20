@@ -10,6 +10,8 @@
 }
 
 .header__bar {
+  /* A borda do header completa a altura usada no scroll das âncoras. */
+  height: calc(var(--header-height) - 1px);
   max-width: var(--content-max-width);
   margin: 0 auto;
   padding: var(--header-padding);
