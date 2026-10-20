@@ -85,6 +85,7 @@
   --column-gap: clamp(20px, 2.6vw, 44px);
   --card-padding: clamp(20px, 2.2vw, 32px);
   --header-padding: 12px clamp(16px, 3.4vw, 48px);
+  --header-height: 69px;
 
   /* Raio */
   --radius-control: 10px;
@@ -100,4 +101,10 @@
 
   /* Breakpoint principal (referência para media queries) */
   --breakpoint-mobile: 900px;
+}
+
+@media (min-width: 1020px) {
+  :root {
+    --header-height: 65px;
+  }
 }
