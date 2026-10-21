@@ -276,3 +276,13 @@ a.ingressos__tier-cta:hover {
   color: var(--color-text-faint-2);
   margin: 22px 0 0;
 }
+
+.ingressos__note a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ingressos__note a:hover {
+  color: var(--color-text-body);
+}
