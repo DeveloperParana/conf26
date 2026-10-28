@@ -154,10 +154,10 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-.patrocinio__slots--prata {
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-}
-
+/* Prata, Apoio institucional e Media Partners: duas por linha em qualquer
+   largura (inclusive celular), sempre menores que Ouro (~49% da linha):
+   Ouro > Prata (46%) > Apoio (44%) > Media Partners (37%). */
+.patrocinio__slots--prata,
 .patrocinio__slots--apoio-institucional,
 .patrocinio__slots--media-partner {
   display: flex;
@@ -181,7 +181,8 @@
 }
 
 .patrocinio__slots--prata .patrocinio__slot {
-  aspect-ratio: 16 / 9;
+  flex: 0 1 46%;
+  aspect-ratio: 16 / 8;
   border: 1px dashed var(--on-light-18);
 }
 
@@ -260,24 +261,10 @@
 }
 
 @media (max-width: 759px) {
-  /* Lado a lado, os cards de apoio institucional/media partner ficavam pequenos
-     demais; empilha e mantém a mesma proporção (85% da largura) do desktop. */
-  .patrocinio__slots--apoio-institucional,
-  .patrocinio__slots--media-partner {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .patrocinio__slots--apoio-institucional .patrocinio__slot,
-  .patrocinio__slots--media-partner .patrocinio__slot {
-    flex-basis: auto;
-  }
-
-  .patrocinio__slots--apoio-institucional .patrocinio__slot {
-    width: 85%;
-  }
-
-  .patrocinio__slots--media-partner .patrocinio__slot {
-    width: 72%;
+  /* Cards menores no celular: deixa a logo ocupar mais do card. */
+  .patrocinio__slots--apoio-institucional .patrocinio__slot--filled img,
+  .patrocinio__slots--media-partner .patrocinio__slot--filled img {
+    max-width: 88%;
+    max-height: 76%;
   }
 }

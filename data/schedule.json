@@ -1,14 +1,14 @@
 [
   { "time": "08:00", "title": "Credenciamento", "description": "Retirada de crachá e camiseta do Lote 1" },
   { "time": "09:00", "title": "Abertura DevParaná", "description": "Boas-vindas e recados do dia" },
-  { "time": "09:30", "title": "Palestra", "description": "A definir" },
-  { "time": "10:30", "title": "Palestra", "description": "A definir" },
-  { "time": "11:30", "title": "Palestra", "description": "A definir" },
+  { "time": "09:30", "title": "IA e Fluência Digital: o papel estratégico do profissional de TI nas organizações", "description": "Daniel F. Hey" },
+  { "time": "10:30", "title": "Virei tech lead, e agora?", "description": "Camis Moreira" },
+  { "time": "11:30", "title": "Código e Cérebro: saúde e performance em comunidades tech de alta demanda cognitiva", "description": "João Brito e Dri Cardoso" },
   { "time": "12:30", "title": "Almoço incluso no venue", "description": "Buffet e bebidas no Bondam, sem sair do evento", "highlight": true },
-  { "time": "14:00", "title": "Palestra", "description": "A definir" },
-  { "time": "15:00", "title": "Palestra", "description": "A definir" },
-  { "time": "15:30", "title": "Palestra", "description": "A definir" },
+  { "time": "14:00", "title": "Sim! Você ainda precisa de uma Feature Store", "description": "Téo Calvo" },
+  { "time": "15:00", "title": "O mercado internacional para devs em 2026: Your Code isn’t Enough", "description": "Camila Rodrigues e Fernando Gomes" },
+  { "time": "15:30", "title": "Deploy não é entrega: os desafios invisíveis de colocar Dados e IA em produção", "description": "Mayara Fagundes" },
   { "time": "16:00", "title": "Coffee break", "description": "Café, networking e visita aos patrocinadores" },
-  { "time": "16:30", "title": "Palestra", "description": "A definir" },
+  { "time": "16:30", "title": "7 horas de vídeo e você ainda não sabe resolver um incidente", "description": "Jeferson Fernando" },
   { "time": "17:30", "title": "Sorteios e encerramento", "description": "Brindes dos patrocinadores e foto oficial" }
 ]
