@@ -163,11 +163,16 @@ async function initPatrocinio() {
       const tierSponsors = sponsors.filter((sponsor) => sponsor.tier === tier.key);
       if (tierSponsors.length === 0) return '';
 
-      const slots = tierSponsors.map((sponsor) => `
-        <a href="${sponsor.url}" target="_blank" rel="noopener" class="patrocinio__slot patrocinio__slot--filled${sponsor.bg === 'dark' ? ' patrocinio__slot--bg-dark' : ''}">
+      const slots = tierSponsors.map((sponsor) => {
+        const hasLink = sponsor.url && sponsor.url !== '#';
+        const tag = hasLink ? 'a' : 'div';
+        const linkAttrs = hasLink ? ` href="${sponsor.url}" target="_blank" rel="noopener"` : '';
+        return `
+        <${tag}${linkAttrs} class="patrocinio__slot patrocinio__slot--filled${sponsor.bg === 'dark' ? ' patrocinio__slot--bg-dark' : ''}">
           ${sponsor.logo ? `<img src="${sponsor.logo}" alt="${sponsor.nome}">` : `<span>${sponsor.nome}</span>`}
-        </a>
-      `).join('');
+        </${tag}>
+      `;
+      }).join('');
 
       return `
         <div>

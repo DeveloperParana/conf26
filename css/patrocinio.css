@@ -156,7 +156,7 @@
 
 /* Prata, Apoio institucional e Media Partners: duas por linha em qualquer
    largura (inclusive celular), sempre menores que Ouro (~49% da linha):
-   Ouro > Prata (46%) > Apoio (44%) > Media Partners (37%). */
+   Ouro > Prata (44%) = Apoio (44%) > Media Partners (37%). */
 .patrocinio__slots--prata,
 .patrocinio__slots--apoio-institucional,
 .patrocinio__slots--media-partner {
@@ -181,7 +181,7 @@
 }
 
 .patrocinio__slots--prata .patrocinio__slot {
-  flex: 0 1 46%;
+  flex: 0 1 44%;
   aspect-ratio: 16 / 8;
   border: 1px dashed var(--on-light-18);
 }
@@ -240,6 +240,15 @@
   min-width: 0;
   min-height: 0;
   object-fit: contain;
+}
+
+/* Prata: SVGs com width/height fixos no arquivo (ex.: OnSafety, 168px) não
+   crescem só com max-width; width explícito faz a logo preencher o card. */
+.patrocinio__slots--prata .patrocinio__slot--filled img {
+  width: 88%;
+  height: 100%;
+  max-width: none;
+  max-height: 80%;
 }
 
 /* Logo clara/transparente que some no fundo off-white do card (ex.: Irrahtech) */
