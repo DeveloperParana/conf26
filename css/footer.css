@@ -104,3 +104,19 @@
   width: auto;
   opacity: .7;
 }
+
+/* Link discreto pra equipe: quase invisível até passar o mouse */
+.footer__restricted {
+  display: block;
+  width: fit-content;
+  margin: 18px auto 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  color: var(--on-dark-14);
+  transition: color var(--transition-default);
+}
+
+.footer__restricted:hover {
+  color: var(--on-dark-60);
+}
