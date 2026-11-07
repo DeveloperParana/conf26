@@ -1,0 +1,179 @@
+/* Manual do Voluntário (/manual) */
+.manual-hero {
+  background: var(--color-black);
+  background-image: radial-gradient(var(--pattern-dot) 1px, transparent 1px);
+  background-size: 26px 26px;
+  padding: clamp(48px, 7vw, 110px) var(--section-padding-x) clamp(40px, 5vw, 80px);
+}
+
+.manual-hero__inner {
+  max-width: var(--content-max-width-narrow);
+  margin: 0 auto;
+}
+
+.manual-hero__title {
+  font-weight: 700;
+  font-size: clamp(36px, 6vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+  color: var(--color-off-white);
+  margin: 14px 0 0;
+}
+
+.manual-hero__lead {
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.65;
+  color: var(--on-dark-72);
+  margin: 22px 0 0;
+  max-width: 62ch;
+}
+
+.manual-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: clamp(24px, 3vw, 40px);
+}
+
+.manual-toc a {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: var(--on-dark-75);
+  border: 1px solid var(--on-dark-20);
+  border-radius: 999px;
+  padding: 8px 14px;
+  transition: border-color var(--transition-default), color var(--transition-default);
+}
+
+.manual-toc a:hover {
+  border-color: var(--color-green-bright);
+  color: var(--color-green-bright);
+}
+
+.manual {
+  background: var(--color-off-white);
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.manual__inner {
+  max-width: var(--content-max-width-narrow);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 5vw, 72px);
+}
+
+.manual__section h2 {
+  font-weight: 700;
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -.025em;
+  color: var(--color-black);
+  margin: 12px 0 0;
+}
+
+.manual__section p,
+.manual__section li {
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.7;
+  color: var(--color-text-body);
+}
+
+.manual__section p {
+  margin-top: 16px;
+  max-width: 68ch;
+}
+
+.manual__section strong {
+  color: var(--color-black);
+  font-weight: 600;
+}
+
+.manual__section a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.manual__section a:hover {
+  color: var(--color-green-forest);
+}
+
+/* Lista com marcador verde */
+.manual__list {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.manual__list li {
+  position: relative;
+  padding-left: 22px;
+  max-width: 68ch;
+}
+
+.manual__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .7em;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--color-green);
+}
+
+.manual__list .manual__list {
+  margin-top: 10px;
+}
+
+/* Cards dos tipos de voluntariado */
+.manual__cards {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.manual__card {
+  background: var(--color-white);
+  border: 1px solid var(--on-light-10);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.manual__card h3 {
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: -.01em;
+  color: var(--color-black);
+}
+
+.manual__card p {
+  font-size: 15px;
+  line-height: 1.65;
+  margin-top: 10px;
+}
+
+.manual__callout {
+  margin-top: 20px;
+  background: var(--tint-green-08);
+  border: 1px solid var(--tint-green-12);
+  border-radius: 12px;
+  padding: 20px 22px;
+}
+
+.manual__callout p {
+  margin: 0;
+}
+
+.manual__callout p + p {
+  margin-top: 10px;
+}
+
+.manual__cta {
+  margin-top: 20px;
+}
