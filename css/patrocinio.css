@@ -262,11 +262,31 @@
 }
 
 @media (max-width: 759px) {
-  /* Cards menores no celular: deixa a logo ocupar mais do card. */
+  /* Celular: cards um pouco maiores (mantendo a hierarquia entre os níveis)
+     e logo ocupando mais do card. */
+  .patrocinio__slots--prata .patrocinio__slot,
+  .patrocinio__slots--apoio-institucional .patrocinio__slot {
+    flex-basis: 48%;
+  }
+
+  .patrocinio__slots--bronze .patrocinio__slot,
+  .patrocinio__slots--media-partner .patrocinio__slot {
+    flex-basis: 44%;
+  }
+
+  .patrocinio__slots--bronze .patrocinio__slot {
+    aspect-ratio: 16 / 8;
+  }
+
+  .patrocinio__slots--prata .patrocinio__slot--filled img {
+    width: 98%;
+    max-height: 94%;
+  }
+
   .patrocinio__slots--bronze .patrocinio__slot--filled img,
   .patrocinio__slots--apoio-institucional .patrocinio__slot--filled img,
   .patrocinio__slots--media-partner .patrocinio__slot--filled img {
-    max-width: 88%;
-    max-height: 76%;
+    max-width: 96%;
+    max-height: 94%;
   }
 }
