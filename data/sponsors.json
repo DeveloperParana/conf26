@@ -4,7 +4,7 @@
   { "tier": "prata", "nome": "OnSafety", "logo": "assets/sponsors/on_safety.svg", "url": "#" },
   { "tier": "bronze", "nome": "Lions Ponta Grossa", "logo": "assets/sponsors/lions-ponta-grossa.svg", "url": "#" },
   { "tier": "apoio-institucional", "nome": "Prefeitura de Maringá", "logo": "assets/sponsors/prefeitura-maringa.svg", "url": "#" },
-  { "tier": "apoio-institucional", "nome": "Sebrae", "logo": "assets/sponsors/sebrae.svg", "url": "#" },
+  { "tier": "apoio-institucional", "nome": "Sebrae", "logo": "assets/sponsors/sebrae-tic.png", "url": "#" },
   { "tier": "media-partner", "nome": "Triunfo Media Out of Home", "logo": "assets/sponsors/triunfo.png", "url": "#" },
   { "tier": "media-partner", "nome": "Maringá Post", "logo": "assets/sponsors/maringa-post.png", "url": "#" }
 ]
