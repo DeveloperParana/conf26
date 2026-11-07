@@ -182,3 +182,12 @@
     display: none;
   }
 }
+
+/* Ingressos esgotados: no lugar do CTA, um selo sem ação */
+.header__cta.header__cta--soldout,
+.header__cta--compact.header__cta--soldout {
+  background: transparent;
+  border: 1px solid var(--on-dark-28);
+  color: var(--on-dark-70);
+  cursor: default;
+}

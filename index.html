@@ -65,11 +65,11 @@
       <a href="#local">Local</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="#ingressos" class="header__cta">Garantir ingresso</a>
+    <span class="header__cta header__cta--soldout">Ingressos esgotados</span>
 
     <!-- Ações de telas pequenas (< 900px) -->
     <div class="header__mobile-actions">
-      <a href="#ingressos" class="header__cta--compact">Ingresso</a>
+      <span class="header__cta--compact header__cta--soldout">Esgotado</span>
       <button type="button" class="header__menu-toggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -121,8 +121,7 @@
       </div>
 
       <div class="hero__actions">
-        <a href="#ingressos" class="btn btn--primary">Garantir ingresso · 3º lote, meia R$ 300</a>
-        <a href="#programacao" class="btn btn--outline">Ver a programação</a>
+        <a href="#programacao" class="btn btn--primary">Ver a programação</a>
         <a href="#local" class="btn btn--outline">Como chegar</a>
       </div>
 
@@ -280,8 +279,8 @@
   <section class="ingressos" id="ingressos">
     <div class="ingressos__inner">
       <div class="eyebrow">Ingressos</div>
-      <h2 class="section-heading">Quanto mais cedo, melhor</h2>
-      <p class="ingressos__lead">Todos os lotes incluem o dia inteiro de palestras, almoço e bebidas no próprio evento.</p>
+      <h2 class="section-heading">Ingressos esgotados</h2>
+      <p class="ingressos__lead">Todos os lotes foram vendidos. Obrigado a quem já garantiu o ingresso: nos vemos dia 7 de novembro, em Maringá.</p>
 
       <div class="ingressos__half">
         <div>
@@ -315,7 +314,7 @@
             <li>Brindes exclusivos</li>
             <li>Camiseta oficial*</li>
           </ul>
-          <div class="ingressos__tier-cta ingressos__tier-cta--disabled">Lote encerrado</div>
+          <div class="ingressos__tier-cta ingressos__tier-cta--disabled">Esgotado</div>
         </div>
 
         <div class="ingressos__tier">
@@ -331,13 +330,12 @@
             <li data-highlight>Almoço e bebidas inclusos</li>
             <li>Brindes exclusivos</li>
           </ul>
-          <div class="ingressos__tier-cta ingressos__tier-cta--disabled">Lote encerrado</div>
+          <div class="ingressos__tier-cta ingressos__tier-cta--disabled">Esgotado</div>
         </div>
 
-        <div class="ingressos__tier ingressos__tier--active">
+        <div class="ingressos__tier">
           <div class="ingressos__tier-header">
             <span class="ingressos__tier-label">3º lote</span>
-            <span class="ingressos__tier-badge">À VENDA</span>
           </div>
           <div class="ingressos__tier-kind">Meia-entrada</div>
           <div class="ingressos__tier-price">R$ 300</div>
@@ -348,7 +346,7 @@
             <li data-highlight>Almoço e bebidas inclusos</li>
             <li>Brindes exclusivos</li>
           </ul>
-          <a href="#" data-link="tickets" class="ingressos__tier-cta">Último lote · R$ 300</a>
+          <div class="ingressos__tier-cta ingressos__tier-cta--disabled">Esgotado</div>
         </div>
       </div>
 
@@ -434,10 +432,6 @@
       <div class="patrocinio__state" data-state="populado" hidden>
         <h2 class="patrocinio__heading">Quem faz acontecer</h2>
         <div class="patrocinio__groups patrocinio__groups--populated"></div>
-        <div class="patrocinio__populated-footer">
-          <span>Ainda há cotas disponíveis.</span>
-          <a href="#" data-link="contact-email" class="btn btn--primary btn--sm">Quero patrocinar</a>
-        </div>
       </div>
     </div>
   </section>
