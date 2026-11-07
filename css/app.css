@@ -1,0 +1,82 @@
+/* App do evento (#app): gamificação e experiências. Fica entre Local (escuro)
+   e FAQ (claro); sem padding embaixo porque o FAQ já abre com o respiro padrão. */
+.app {
+  background: var(--color-off-white);
+  padding: var(--section-padding-y) var(--section-padding-x) 0;
+}
+
+.app__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  background: var(--color-black);
+  background-image: radial-gradient(var(--on-dark-07) 1px, transparent 1px);
+  background-size: 26px 26px;
+  border: 1px solid var(--on-dark-12);
+  border-radius: var(--radius-container);
+  padding: clamp(26px, 3.4vw, 56px);
+  display: grid;
+  gap: clamp(28px, 3.4vw, 56px);
+}
+
+.app__intro .eyebrow {
+  color: var(--color-green-bright);
+}
+
+.app__heading {
+  color: var(--color-off-white);
+  max-width: 20ch;
+}
+
+.app__lead {
+  color: var(--on-dark-66);
+}
+
+.app__button {
+  margin-top: clamp(22px, 2.6vw, 32px);
+}
+
+.app__steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.app__step {
+  background: var(--on-dark-05);
+  border: 1px solid var(--on-dark-12);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.app__step-number {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .1em;
+  color: var(--color-green-bright);
+}
+
+.app__step-title {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: -.01em;
+  color: var(--color-off-white);
+}
+
+.app__step-text {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--on-dark-66);
+}
+
+@media (min-width: 900px) {
+  .app__inner {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: center;
+  }
+
+  .app__steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
