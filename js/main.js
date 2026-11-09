@@ -155,7 +155,6 @@ async function initPatrocinio() {
     const tiers = [
       { key: 'ouro', label: 'Ouro' },
       { key: 'prata', label: 'Prata' },
-      { key: 'bronze', label: 'Bronze' },
       { key: 'apoio-institucional', label: 'Apoio institucional' },
       { key: 'media-partner', label: 'Media Partners' },
     ];

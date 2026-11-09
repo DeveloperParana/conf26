@@ -156,9 +156,8 @@
 
 /* Prata, Apoio institucional e Media Partners: duas por linha em qualquer
    largura (inclusive celular), sempre menores que Ouro (~49% da linha):
-   Ouro > Prata (44%) = Apoio (44%) > Bronze (37%) = Media Partners (37%). */
+   Ouro > Prata (44%) = Apoio (44%) > Media Partners (37%). */
 .patrocinio__slots--prata,
-.patrocinio__slots--bronze,
 .patrocinio__slots--apoio-institucional,
 .patrocinio__slots--media-partner {
   display: flex;
@@ -187,7 +186,6 @@
   border: 1px dashed var(--on-light-18);
 }
 
-.patrocinio__slots--bronze .patrocinio__slot,
 .patrocinio__slots--apoio-institucional .patrocinio__slot,
 .patrocinio__slots--media-partner .patrocinio__slot {
   border: 1px dashed var(--on-light-20);
@@ -198,7 +196,6 @@
   aspect-ratio: 16 / 8;
 }
 
-.patrocinio__slots--bronze .patrocinio__slot,
 .patrocinio__slots--media-partner .patrocinio__slot {
   flex: 0 1 37%;
   aspect-ratio: 16 / 6;
@@ -216,7 +213,6 @@
   color: var(--color-text-disabled);
 }
 
-.patrocinio__slots--bronze .patrocinio__slot span,
 .patrocinio__slots--apoio-institucional .patrocinio__slot span,
 .patrocinio__slots--media-partner .patrocinio__slot span {
   font-family: var(--font-mono);
@@ -229,7 +225,6 @@
    pra vencer a borda tracejada (senão o seletor de tier ganha). */
 .patrocinio__slots--ouro .patrocinio__slot--filled,
 .patrocinio__slots--prata .patrocinio__slot--filled,
-.patrocinio__slots--bronze .patrocinio__slot--filled,
 .patrocinio__slots--apoio-institucional .patrocinio__slot--filled,
 .patrocinio__slots--media-partner .patrocinio__slot--filled {
   border: 1px solid var(--on-light-10);
@@ -269,13 +264,8 @@
     flex-basis: 48%;
   }
 
-  .patrocinio__slots--bronze .patrocinio__slot,
   .patrocinio__slots--media-partner .patrocinio__slot {
     flex-basis: 44%;
-  }
-
-  .patrocinio__slots--bronze .patrocinio__slot {
-    aspect-ratio: 16 / 8;
   }
 
   .patrocinio__slots--prata .patrocinio__slot--filled img {
@@ -283,7 +273,6 @@
     max-height: 94%;
   }
 
-  .patrocinio__slots--bronze .patrocinio__slot--filled img,
   .patrocinio__slots--apoio-institucional .patrocinio__slot--filled img,
   .patrocinio__slots--media-partner .patrocinio__slot--filled img {
     max-width: 96%;
